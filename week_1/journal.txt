@@ -3,9 +3,12 @@
     Commannds to remember:
 
     to save login and password:
-    git config credential.helper store
+    git config (--global) credential.helper store
     git pull
     
+    git config --global user.email test@star-s.ru  (e-mailsetup)
+
+
     git pull - get latest changes on current branch
 
     branching
