@@ -1,1 +1,22 @@
-currently located in devjournal branch
+26.07.2019 
+    Setting up git environment
+    Commannds to remember:
+
+    to save login and password:
+    git config credential.helper store
+    git pull
+    
+    git pull - get latest changes on current branch
+
+    branching
+        git checkout [branchname] switch branches
+        git checkout -b [branchname] create branch and switch to it
+        git add .
+        git commit -m [messagetext]
+
+    merging process:
+        git checkout master
+        git merge [branchname]
+        git status
+        git commit -m [msgtext] (or git push directly...)
+        git push origin master
