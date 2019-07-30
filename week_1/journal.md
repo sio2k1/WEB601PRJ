@@ -1,1 +1,0 @@
-#currently located in journal.txt
