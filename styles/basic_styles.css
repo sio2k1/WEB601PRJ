@@ -17,6 +17,12 @@ body {
   font-size: 50px;
   color: white;
   text-align: center;
-  vertical-align: bottom;
+}
+
+.fonts-footer {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  color: white;
+  text-align: right;
 }
 /*# sourceMappingURL=basic_styles.css.map */
