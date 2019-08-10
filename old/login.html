@@ -7,15 +7,22 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="./styles/basic_styles.css">
         <link rel="stylesheet" href="./styles/login_layout.css">
-       
+        <!-- react -->
+        <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+        <!-- react -->
     </head>
     <body>
+        
+       
+
         <div class="grid-wrapper">
             <div class="top-row">    
-
+                    
             </div>
             <div class="header-row">    
-                    <p class="fonts-big-title">Simple Quiz Game</p>
+                    <div id="root"></div><p class="fonts-big-title">Simple Quiz Game</p>
             </div>
             <div class="login-row">
                 <div class="login-box"></div>
@@ -27,6 +34,6 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         
-        <script src="" async defer></script>
+        <script type="text/babel" src="./scripts/react.js"></script>
     </body>
 </html>
