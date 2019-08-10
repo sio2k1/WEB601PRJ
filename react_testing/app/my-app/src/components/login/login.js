@@ -15,7 +15,7 @@ const Login = () => {
             <div class="login-row">
                 <div class="login-box"></div>
             </div>
-            <div class="footer-row"><p class="fonts-footer">footertext</p></div>
+           
 
         </div>
       )

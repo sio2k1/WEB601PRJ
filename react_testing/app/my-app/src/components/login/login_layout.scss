@@ -1,4 +1,4 @@
-$footer-h: 22px;
+
 
 
 .fonts-big-title
@@ -27,8 +27,7 @@ $footer-h: 22px;
     grid-template-areas:
     'top'
     'head'
-    'log'
-    'foot';
+    'log';
     grid-gap: 0px;
     padding: 0px;
     margin: 0px;
@@ -51,9 +50,9 @@ $footer-h: 22px;
     display: flex;
     justify-content: center;
     grid-area: log; 
-    height: calc(60vh - #{$footer-h});
-
-    background-color: #666DB0;
+    //height: calc(60vh - #{$footer-h});
+    height:50vh;
+    background-color: #996DB0;
 }
 
 .login-box{
@@ -64,10 +63,4 @@ $footer-h: 22px;
     border-radius: 20px; 
     border-top: 0px transparent; 
     
-}
-.footer-row{
-
-    grid-area: foot; 
-    height: $footer-h;
-    background-color: #666DB0;
 }
