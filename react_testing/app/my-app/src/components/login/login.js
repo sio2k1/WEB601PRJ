@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 //import {createStore} from '../../my_redux'
 import './login_layout.css';
+import Login_box from './login_box'
 
 const Login = () => {
     return (
@@ -13,7 +14,7 @@ const Login = () => {
                     <p class="fonts-big-title">Simple Quiz Game</p>
             </div>
             <div class="login-row">
-                <div class="login-box"></div>
+                <Login_box />
             </div>
            
 
