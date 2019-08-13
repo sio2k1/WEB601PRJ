@@ -11,10 +11,6 @@
 
 }
 
-
-
-
-
 .grid-wrapper{
     display: grid;
     grid-template-areas:
@@ -24,17 +20,19 @@
     grid-gap: 0px;
     padding: 0px;
     margin: 0px;
+    background-image: url('../../images/f3.png');
+    background-size: cover;
 }
 .top-row{
     grid-area: top; 
-    height: 25vh;
-    background-color: #666DB0;
+    height: 20vh;
+    
 }
 
 .header-row{
     grid-area: head; 
-    height: 15vh;
-    background-color: #666DB0;
+    height: 10vh;
+
     //display: flex;
     //flex-direction: column-reverse;
 }
@@ -44,8 +42,8 @@
     justify-content: center;
     grid-area: log; 
     //height: calc(60vh - #{$footer-h});
-    height:auto;
-    background-color: #666DB0;
+    height:64vh;
+    
 }
 
 

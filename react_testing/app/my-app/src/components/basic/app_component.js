@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 //import {createStore} from '../../my_redux'
 import './basic.css';
+import Navigation from '../menu/navigation'
 
 
 
@@ -10,13 +11,11 @@ import './basic.css';
 
 const App_main = ({ children }) => {
     return (
-      <div class="myapp">
-        <div class ="app-main-grid">
-            <div class="app-main-content-row">{children}</div>
-            <div class="app-main-footer-row">
-                <p class="fonts-footer">footertext_app</p>
-            </div>
-        </div>
+      <div class="myapp"><Navigation />{children}
+         {/* <div class ="app-main-grid">
+          <div class="app-main-menu-row"><Navigation /></div>
+          <div class="app-main-content-row"></div>
+        </div>  */}
       </div>
       
     )

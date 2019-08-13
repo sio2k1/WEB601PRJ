@@ -1,0 +1,29 @@
+.home-grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: calc(100vh - 46px) 100vh;
+      grid-template-rows: calc(100vh - 46px) 100vh;
+  grid-gap: 0px;
+}
+
+.row-logo {
+  -ms-grid-row: 1;
+  grid-row: 1;
+  background-image: url("../../images/f3.png");
+  background-size: cover;
+}
+
+.row-article {
+  -ms-grid-row: 2;
+  grid-row: 2;
+}
+
+:target::before {
+  content: "";
+  display: block;
+  height: 46px;
+  /* fixed header height*/
+  margin: -46px 0 0;
+  /* negative fixed header height */
+}
+/*# sourceMappingURL=home.css.map */

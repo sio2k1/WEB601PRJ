@@ -1,0 +1,25 @@
+.home-grid
+{
+    display: grid;
+    grid-template-rows: calc(100vh - 46px) 100vh;
+    grid-gap: 0px;
+}
+
+.row-logo
+{
+    grid-row: 1;
+    background-image: url("../../images/f3.png");
+    background-size: cover;
+    //background-color: black;
+}
+
+.row-article{
+    grid-row: 2;
+}
+
+:target::before {
+    content: "";
+    display: block;
+    height: 46px; /* fixed header height*/
+    margin: -46px 0 0; /* negative fixed header height */
+  }

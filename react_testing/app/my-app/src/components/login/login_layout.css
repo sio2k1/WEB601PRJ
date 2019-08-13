@@ -12,22 +12,22 @@
   grid-gap: 0px;
   padding: 0px;
   margin: 0px;
+  background-image: url("../../images/f3.png");
+  background-size: cover;
 }
 
 .top-row {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: top;
-  height: 25vh;
-  background-color: #666DB0;
+  height: 20vh;
 }
 
 .header-row {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: head;
-  height: 15vh;
-  background-color: #666DB0;
+  height: 10vh;
 }
 
 .login-row {
@@ -40,7 +40,6 @@
   -ms-grid-row: 3;
   -ms-grid-column: 1;
   grid-area: log;
-  height: auto;
-  background-color: #666DB0;
+  height: 64vh;
 }
 /*# sourceMappingURL=login_layout.css.map */

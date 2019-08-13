@@ -8,15 +8,10 @@ import {Provider} from 'react-redux'
 
 import App_main from './components/basic/app_component'
 import Login from './components/login/login'
+import Home from './components/home/home'
 const history = createBrowserHistory();
 
-const Home = () => {
-return (
-  <div>
-    <h2>Home</h2>
-  </div>
-  )
-}
+
 
 let initialState = {aaa:0};
 let storage_operator = (state=initialState, action) => {

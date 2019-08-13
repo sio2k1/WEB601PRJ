@@ -17,4 +17,19 @@
         <div id="root"></div>
         <script type="text/babel" src="index.js"></script>
     </body>
+    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0.0/dist/smooth-scroll.polyfills.min.js"></script>
+    <script>
+        //var scroll = new SmoothScroll('a[href*="#"]',{speed:300, offset:46,topOnEmptyHash: true});
+        var scroll = new SmoothScroll('a[href*="#"]',{speed:300, offset: function (anchor, toggle) {
+           
+
+if (anchor.id==='home') {
+    return 46;
+} else {
+    return 46;
+}
+
+}});
+    </script>
+
 </html>
