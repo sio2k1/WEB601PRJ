@@ -1,0 +1,5 @@
+[
+    {"item_name":"Duck","price":300,"units":"Kg"},
+    {"item_name":"Turkey","price":700,"units":"Kg"},
+    {"item_name":"Cabbage","price":900,"units":"Kg"}
+]
