@@ -20,7 +20,9 @@
     grid-gap: 0px;
     padding: 0px;
     margin: 0px;
-    background-image: url('../../images/f3.png');
+    //background-image: url('../../images/f3.png');
+    background: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),
+    url(../../images/f3.png);
     background-size: cover;
 }
 .top-row{

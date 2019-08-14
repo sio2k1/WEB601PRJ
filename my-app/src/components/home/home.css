@@ -1,29 +1,47 @@
 .home-grid {
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: calc(100vh - 46px) 100vh;
-      grid-template-rows: calc(100vh - 46px) 100vh;
+  -ms-grid-rows: calc(100vh - 46px);
+      grid-template-rows: calc(100vh - 46px);
   grid-gap: 0px;
 }
 
 .row-logo {
   -ms-grid-row: 1;
   grid-row: 1;
-  background-image: url("../../images/f3.png");
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0.3))), url(../../images/f3.png);
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../../images/f3.png);
   background-size: cover;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.row-article {
-  -ms-grid-row: 2;
-  grid-row: 2;
+.logo-img {
+  top: 400px;
+  width: calc( 733px / 2);
+  height: calc( 543px / 2);
+  background-size: cover;
+  background-image: url("../../images/logo.png");
+  -webkit-filter: blur(0.5px) brightness(1);
+          filter: blur(0.5px) brightness(1);
+}
+
+/*
+.row-article{
+    grid-row: 2;
 }
 
 :target::before {
-  content: "";
-  display: block;
-  height: 46px;
-  /* fixed header height*/
-  margin: -46px 0 0;
-  /* negative fixed header height */
-}
+    content: "";
+    display: block;
+    height: 46px; 
+    margin: -46px 0 0; 
+  }*/
 /*# sourceMappingURL=home.css.map */

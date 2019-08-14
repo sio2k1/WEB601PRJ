@@ -9,6 +9,8 @@ import {Provider} from 'react-redux'
 import App_main from './components/basic/app_component'
 import Login from './components/login/login'
 import Home from './components/home/home'
+import About from './components/about/about'
+import Defaultpage from './components/defaultpage/defaultpage'
 const history = createBrowserHistory();
 
 
@@ -38,7 +40,11 @@ class Navi extends React.Component{
           <App_main>
             <Switch>
               <Route exact path='/' component={Home} />
+              
               <Route path='/login' component={Login} />
+              <Defaultpage>
+                <Route path='/about' component={About} />
+              </Defaultpage>
             </Switch>
           </App_main>
       </BrowserRouter>
