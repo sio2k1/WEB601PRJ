@@ -11,7 +11,7 @@ const Login = () => {
                     
             </div>
             <div class="header-row">    
-                    <p class="fonts-big-title">Simple Quiz Game</p>
+                    <p class="fonts-big-title">Login text</p>
             </div>
             <div class="login-row">
                 <Login_box />

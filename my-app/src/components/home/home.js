@@ -10,7 +10,7 @@ const Home = () => {
       <div>
         <div class="home-grid">
           <div class="row-logo"><section id="home"></section></div>
-          <div class="row-article"><section id="about">SOME TEXT HOME<hr/>SOME TEXT HOME<hr/>SOME TEXT HOME<hr/>SOME TEXT HOME<hr/></section></div>
+          <div class="row-article"><section id="about">SOME TEXT About<hr/>SOME TEXT About<hr/>SOME TEXT About<hr/>SOME TEXT About<hr/></section></div>
         </div>
       </div>
       )
