@@ -1,23 +1,29 @@
-.default-page-grid
-{
-    display: grid;
-    grid-template-rows: calc(82vh - 46px) 18vh;
-    grid-gap: 0px;
-}
+@import '../common/cssvars.scss';
+// .default-page-grid
+// {
+//     // display: grid;
+//     // grid-template-rows: calc(82vh - 46px) 18vh;
+//     // grid-gap: 0px;
+// }
 
+// .default-page-content
+// {
+//     //grid-row: 1;
+
+// }
 .default-page-content
 {
-    grid-row: 1;
-
+    min-height: calc(#{$article_h} - #{$article_margin_top} - #{$header_h});
 }
 
 .default-page-footer{
-    grid-row: 2;
+    //grid-row: 2;
+
     width: 100%;
-    height: 18vh;
+    height: $footer_h;
     background-size: cover;
     background-image: url(../../images/footer2_smaller.png)
-}
+} 
 
 
 /* 

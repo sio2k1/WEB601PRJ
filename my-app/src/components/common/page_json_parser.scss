@@ -1,0 +1,75 @@
+@import '../common/cssvars.scss';
+.pic-table-centerer{
+    margin-top: $article_margin_top;
+    display: flex;
+    justify-content: center;
+}
+.pic-table
+{
+    //left: 10vw;
+
+    width: 70vw;
+    align-items: center;
+}
+
+.td-pic {
+     display: flex;
+     justify-content: center;
+     //background-color: aquamarine;
+ }
+
+ .article-content-centerer{
+    margin-top: $article_margin_top;
+    display: flex;
+    justify-content: center;
+ }
+ .article-content
+ {
+    p {
+        margin-top: 10px;
+    }
+    width: $article_w;
+    //background-color: bisque;
+    //display: flex;
+    //justify-content: center; 
+ }
+
+ 
+
+ .img-article-container
+ {
+    display: flex;
+    justify-content: center;
+ }
+
+ .img-article
+ {
+    width: $article_w;
+    margin: 20px;
+    //height: 200px;  
+ }
+
+
+ .t-img-auto 
+ {
+    width: 200px;
+    height: 200px;
+    box-shadow: 8px 7px 15px -5px rgba(0,0,0,0.37);
+    border-radius: 7px;
+ }
+
+ @media only screen and (max-width: 1024px) {
+    .t-img-auto 
+    {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+ @media only screen and (max-width: 768px) {
+    .t-img-auto 
+    {
+        width: 100px;
+        height: 100px;
+    }
+}

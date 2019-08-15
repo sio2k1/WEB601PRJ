@@ -9,10 +9,10 @@ const Defaultpage = ({ children }) => {
     return (
       <div>
         <div class="default-page-grid">
-          <div class="default-page-content">
+          <article><div class="default-page-content">
             {children}
-          </div>
-          <div class="default-page-footer"></div>
+          </div></article>
+          <footer><div class="default-page-footer"></div></footer>
         </div>
       </div>
       )

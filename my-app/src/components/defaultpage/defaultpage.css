@@ -1,19 +1,8 @@
-.default-page-grid {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-rows: calc(82vh - 46px) 18vh;
-      grid-template-rows: calc(82vh - 46px) 18vh;
-  grid-gap: 0px;
-}
-
 .default-page-content {
-  -ms-grid-row: 1;
-  grid-row: 1;
+  min-height: calc(82vh - 5vh - 46px);
 }
 
 .default-page-footer {
-  -ms-grid-row: 2;
-  grid-row: 2;
   width: 100%;
   height: 18vh;
   background-size: cover;
