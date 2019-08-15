@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import './page_json_parser.css';
 
 
-const return_article_content = (json) => {
+const return_article_content = (json) => { //parsing an artical content to get parag. and img from json
   return ( 
     <div class="article-content-centerer"><div class="article-content">
     {json.map((parag) => {
@@ -20,41 +20,30 @@ const return_article_content = (json) => {
         </div>
         )
       }
-
-    
     })}
     </div></div>
   )
-
 }
 
-const return_pic_grid = (json) =>
-{
-  if (json!= undefined)
+const return_pic_grid = (json) => { //parsing header and footer
+  
+  if (json!= undefined) //if header or footer exists in json
   {
-    
-    /*let imgStyle = {
-      width: 200,
-      height: 200
-    };*/
-    
+
     return ( 
-    <div class="pic-table-centerer"><table class="pic-table"><tr>
-    {
-      json.map((pic) => 
-        <td>
-          <div class="td-pic">
-            <img class="t-img-auto" src={require('../../images/'+pic.src)} alt={pic.alt} />
-          </div>
-        </td>)
-      /*json.header_pic.map((pic) => {
-        return (<td>{pic.src}</td>)
-      })*/
-    }
-     </tr></table></div>
+      <div class="pic-table-centerer"><table class="pic-table"><tr>
+      {
+        json.map((pic) => 
+          <td>
+            <div class="td-pic">
+              <img class="t-img-auto" src={require('../../images/'+pic.src)} alt={pic.alt} />
+            </div>
+          </td>)
+      }
+      </tr></table></div>
     )
-    //return();
-  } else
+
+  } else //if header or footer not exists in json return empty div
   {
     return(<div></div>); // there is no header table
   }
@@ -73,4 +62,5 @@ const json_parser = (json) => {
       </div>
       )
     }
+    
 export default json_parser;

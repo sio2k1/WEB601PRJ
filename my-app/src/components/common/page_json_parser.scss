@@ -1,6 +1,7 @@
 @import '../common/cssvars.scss';
 .pic-table-centerer{
     margin-top: $article_margin_top;
+    margin-bottom: $article_margin_top;
     display: flex;
     justify-content: center;
 }
@@ -20,6 +21,7 @@
 
  .article-content-centerer{
     margin-top: $article_margin_top;
+    margin-bottom: $article_margin_top;
     display: flex;
     justify-content: center;
  }

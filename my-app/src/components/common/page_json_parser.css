@@ -1,5 +1,6 @@
 .pic-table-centerer {
   margin-top: 5vh;
+  margin-bottom: 5vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -26,6 +27,7 @@
 
 .article-content-centerer {
   margin-top: 5vh;
+  margin-bottom: 5vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
