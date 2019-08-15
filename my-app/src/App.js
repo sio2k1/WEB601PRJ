@@ -10,6 +10,7 @@ import App_main from './components/basic/app_component'
 import Login from './components/login/login'
 import Home from './components/home/home'
 import About from './components/about/about'
+import Price from './components/price/price'
 import Defaultpage from './components/defaultpage/defaultpage'
 const history = createBrowserHistory();
 
@@ -44,6 +45,7 @@ class Navi extends React.Component{
               <Route path='/login' component={Login} />
               <Defaultpage>
                 <Route path='/about' component={About} />
+                <Route path='/price' component={Price} />
               </Defaultpage>
             </Switch>
           </App_main>

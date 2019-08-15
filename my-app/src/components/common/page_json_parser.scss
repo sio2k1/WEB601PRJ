@@ -20,7 +20,7 @@
  }
 
  .article-content-centerer{
-    margin-top: $article_margin_top;
+    //margin-top: $article_margin_top;
     margin-bottom: $article_margin_top;
     display: flex;
     justify-content: center;
@@ -48,6 +48,8 @@
  {
     width: $article_w;
     margin: 20px;
+    box-shadow: 8px 7px 8px -5px rgba(0,0,0,0.37);
+    border-radius: 7px;
     //height: 200px;  
  }
 

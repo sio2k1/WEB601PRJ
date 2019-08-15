@@ -26,7 +26,6 @@
 }
 
 .article-content-centerer {
-  margin-top: 5vh;
   margin-bottom: 5vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -56,6 +55,9 @@
 .img-article {
   width: 60vw;
   margin: 20px;
+  -webkit-box-shadow: 8px 7px 8px -5px rgba(0, 0, 0, 0.37);
+          box-shadow: 8px 7px 8px -5px rgba(0, 0, 0, 0.37);
+  border-radius: 7px;
 }
 
 .t-img-auto {

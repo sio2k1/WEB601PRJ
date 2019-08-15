@@ -13,6 +13,7 @@
 // }
 .default-page-content
 {
+    margin-top: $article_margin_top; 
     min-height: calc(#{$article_h} - #{$article_margin_top} - #{$header_h});
 }
 
