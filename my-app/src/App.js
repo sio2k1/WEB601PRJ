@@ -12,9 +12,9 @@ import Home from './components/home/home'
 import About from './components/about/about'
 import Price from './components/price/price'
 import Defaultpage from './components/defaultpage/defaultpage'
+
+
 const history = createBrowserHistory();
-
-
 
 let initialState = {aaa:0};
 let storage_operator = (state=initialState, action) => {
