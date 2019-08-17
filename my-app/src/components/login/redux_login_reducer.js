@@ -1,7 +1,7 @@
 import * as act from './redux_login_actions'
 import user_data from '../../jsondata/users.json'
 
-let initialState = {user_id:-1, user_name:""};
+let initialState = {user_id:-1, user_name:"", wrong_login_pwd:false};
 function login_reducer(state=initialState, action)  {
 
   if (action.type==='TEST')
@@ -12,7 +12,17 @@ function login_reducer(state=initialState, action)  {
         user_id:2,user_name:"SiO"
       }
     )
-  } 
+  } else
+
+  if (action.type===act.LOGOFF)
+  {
+    return Object.assign({}, state, 
+      {
+        user_name:"", user_id:-1,  wrong_login_pwd:false
+      })
+  } else
+
+
   if (action.type===act.LOGIN)
   {
     //let user_found = false;
@@ -29,10 +39,15 @@ function login_reducer(state=initialState, action)  {
     {
       return Object.assign({}, state, 
         {
-          user_name:usercred.login, user_id:usercred.id
+          user_name:usercred.login, user_id:usercred.id,  wrong_login_pwd:false
         })
     } else
-    { return state;}
+    { 
+      return Object.assign({}, state, 
+        {
+          wrong_login_pwd:true
+        })
+    }
   } else 
   {
       return state;

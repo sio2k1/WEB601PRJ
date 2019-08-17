@@ -1,5 +1,5 @@
 .login-box{
-    height: 210px; 
+    height: 220px; 
     width: 400px; 
     padding: 10px;
     //margin: 10px; 
@@ -33,4 +33,9 @@
 .login-btn:hover {
   background-color: #9396b3;
 }
+
+.login-wrong {
+  color: red;
+}
+  
   
