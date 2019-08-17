@@ -11,7 +11,7 @@ export const a_login = (login, pwd_) => (
 );
 
 export const a_logoff = () => (
-  {
-    type:LOGOFF  
-  }
-  );
+{
+  type:LOGOFF  
+}
+);
