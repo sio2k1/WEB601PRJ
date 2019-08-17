@@ -1,3 +1,15 @@
-*{
-    margin: 0px;
+@import '../common/cssvars.scss';
+.price-table-centerer{
+    margin-top: $article_margin_top;
+    margin-bottom: $article_margin_top;
+    display: flex;
+    justify-content: center;
+}
+
+.price-table-centerer table{
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+    border-collapse: collapse;
+    width: $article_w;
 }

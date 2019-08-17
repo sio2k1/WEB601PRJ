@@ -1,4 +1,20 @@
-* {
-  margin: 0px;
+.price-table-centerer {
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.price-table-centerer table {
+  border-collapse: collapse;
+  width: 60vw;
+}
+
+.price-table-centerer table tr:nth-child(even) {
+  background-color: #f2f2f2;
 }
 /*# sourceMappingURL=price.css.map */

@@ -1,5 +1,5 @@
 .login-box {
-  height: 200px;
+  height: 210px;
   width: 400px;
   padding: 10px;
   background-color: white;
@@ -7,7 +7,7 @@
   border-top: 0px transparent;
 }
 
-input[type=text], select {
+.login-txt-inp {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -18,7 +18,7 @@ input[type=text], select {
           box-sizing: border-box;
 }
 
-input[type=submit] {
+.login-btn {
   width: 100%;
   background-color: #285B28;
   color: white;
@@ -29,13 +29,7 @@ input[type=submit] {
   cursor: pointer;
 }
 
-input[type=submit]:hover {
-  background-color: #5565f3;
+.login-btn:hover {
+  background-color: #9396b3;
 }
-
-/* div {
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px;
-  }*/
 /*# sourceMappingURL=login_box.css.map */

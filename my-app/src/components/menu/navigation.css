@@ -9,6 +9,7 @@
   overflow: hidden;
   background-color: whitesmoke;
   text-align: center;
+  z-index: 1;
 }
 
 .navbar li {

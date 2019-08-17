@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom'
 import './login_layout.css';
 import Login_box from './login_box'
 
+
 const Login = () => {
     return (
         <div class="grid-wrapper">
@@ -11,7 +12,7 @@ const Login = () => {
                     
             </div>
             <div class="header-row">    
-                    <p class="fonts-big-title">Login text</p>
+                    <p class="fonts-big-title"></p>
             </div>
             <div class="login-row">
                 <Login_box />
@@ -22,3 +23,4 @@ const Login = () => {
       )
     }
 export default Login;
+

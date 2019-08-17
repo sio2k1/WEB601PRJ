@@ -7,15 +7,20 @@
 }
 .pic-table
 {
-    //left: 10vw;
+    td {
+        vertical-align: top;
+    }
 
     width: 70vw;
     align-items: center;
 }
 
+
 .td-pic {
      display: flex;
-     justify-content: center;
+     flex-direction: column;
+     //justify-content: flex-start;
+     align-items: center;
      //background-color: aquamarine;
  }
 

@@ -1,7 +1,7 @@
 {
   "header_pic": [
     { "src": "about_cab.jpg", "alt":"Cabbage" },
-    { "src": "about_lamb.jpg", "alt":"Lamb" },
+    { "src": "about_lamb.jpg", "alt":"Lamb", "flipcardtext":"Some extra lamb text on flip"  },
     { "src": "about_eggs.jpg", "alt":"Eggs" }
   ],
 

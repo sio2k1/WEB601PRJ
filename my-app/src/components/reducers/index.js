@@ -1,5 +1,7 @@
 import { combineReducers } from "redux";
 //import visibilityFilter from "./visibilityFilter";
-import login_reducer from "../login/login_reducer";
+import login_reducer from "../login/redux_login_reducer";
 
-export default combineReducers({ login_reducer });
+export default combineReducers({
+    login_reducer
+})

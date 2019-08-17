@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import './page_json_parser.css';
-
+import './flipcards.css';
 
 const return_article_content = (json) => { //parsing an artical content to get parag. and img from json
   return ( 
@@ -27,6 +27,40 @@ const return_article_content = (json) => { //parsing an artical content to get p
 
 const return_pic_grid = (json) => { //parsing header and footer
   
+  const GenCard = props => // we return card here, if there is a text we return flip card
+  {
+    const pic = props.pic;
+
+    if (pic.flipcardtext!=undefined)
+    {
+      return  (
+        <div class="td-pic">
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img class="t-img-auto" src={require('../../images/'+pic.src)} alt={pic.alt} />
+              </div>
+              <div class="flip-card-back">
+                <p>{pic.flipcardtext}</p> 
+              </div>
+            </div>
+          </div>
+        </div>
+      )
+    }
+    else
+    {
+      return  (
+        <div class="td-pic">
+          <img class="t-img-auto" src={require('../../images/'+pic.src)} alt={pic.alt} />
+        </div> 
+      )
+    }
+
+
+  }
+  
+
   if (json!= undefined) //if header or footer exists in json
   {
 
@@ -35,9 +69,7 @@ const return_pic_grid = (json) => { //parsing header and footer
       {
         json.map((pic) => 
           <td>
-            <div class="td-pic">
-              <img class="t-img-auto" src={require('../../images/'+pic.src)} alt={pic.alt} />
-            </div>
+            <GenCard pic={pic} />
           </td>)
       }
       </tr></table></div>

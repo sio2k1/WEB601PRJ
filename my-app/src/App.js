@@ -2,8 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 //import {createStore} from './my_redux'
 import {BrowserRouter,Route,Link, Switch} from 'react-router-dom'
-import createBrowserHistory from 'history/createBrowserHistory'
-import { createStore } from 'redux'
+
+//import createBrowserHistory from 'history/createBrowserHistory'
+import { createStore, combineReducers } from 'redux'
 import {Provider} from 'react-redux'
 
 import App_main from './components/basic/app_component'
@@ -12,36 +13,30 @@ import Home from './components/home/home'
 import About from './components/about/about'
 import Price from './components/price/price'
 import Defaultpage from './components/defaultpage/defaultpage'
+import comb_reducers from './components/reducers/index'
 
 
+const createBrowserHistory = require("history").createBrowserHistory;
 const history = createBrowserHistory();
 
-let initialState = {aaa:0};
-let storage_operator = (state=initialState, action) => {
 
-  if (action.type==='INC')
-  {
-      return {test: state.test+1};
-  } else 
-  {
-      return state;
-  }
-}
 
-let store = createStore(storage_operator);
+
+const store = createStore(comb_reducers);
 
 
 
 
 class Navi extends React.Component{
   render(){
+
+    //console.log();
     return (
       <Provider store={store}>
         <BrowserRouter history={history}>
           <App_main>
             <Switch>
               <Route exact path='/' component={Home} />
-              
               <Route path='/login' component={Login} />
               <Defaultpage>
                 <Route path='/about' component={About} />

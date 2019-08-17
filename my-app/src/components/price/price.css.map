@@ -1,8 +1,9 @@
 {
     "version": 3,
-    "mappings": "AAAA,AAAA,CAAC,CAAA;EACG,MAAM,EAAE,GAAG;CACd",
+    "mappings": "AACA,AAAA,qBAAqB,CAAA;EACjB,UAAU,ECDM,GAAG;EDEnB,aAAa,ECFG,GAAG;EDGnB,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,MAAM;CAC1B;;AAED,AAAA,qBAAqB,CAAC,KAAK,CAAA;EAIvB,eAAe,EAAE,QAAQ;EACzB,KAAK,ECTG,IAAI;CDUf;;AAND,AACI,qBADiB,CAAC,KAAK,CACvB,EAAE,AAAA,UAAW,CAAA,IAAI,EAAE;EACf,gBAAgB,EAAE,OAAO;CAC5B",
     "sources": [
-        "price.scss"
+        "price.scss",
+        "../common/cssvars.scss"
     ],
     "names": [],
     "file": "price.css"
