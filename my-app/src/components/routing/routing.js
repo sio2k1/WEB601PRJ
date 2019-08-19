@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {connect} from 'react-redux'; 
 import {BrowserRouter,Route,Link, Switch} from 'react-router-dom'
-import App_main from '../basic/app_component'
+import App_layout from '../app_layout/app_layout'
 import Login from '../login/login'
 import Home from '../home/home'
 import About from '../about/about'
@@ -24,7 +24,7 @@ class Routing extends React.Component{
   
       //console.log();
       return (
-            <App_main>
+            <App_layout>
               <Switch>
                 {this.login_routes()}
                 <Route exact path='/' component={Home} />
@@ -37,7 +37,7 @@ class Routing extends React.Component{
                   </Switch>
                 </Defaultpage> 
               </Switch>
-            </App_main>
+            </App_layout>
       );
     }
   }
