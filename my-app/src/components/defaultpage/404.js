@@ -1,13 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-
+import './404.css';
 
 
 
 const NotFound = () => { 
     return (
-      <div>
-        <p>404 sorry</p>
+      <div class="four-zero-four-text">
+        <p>404</p>
       </div>
       )
     }
