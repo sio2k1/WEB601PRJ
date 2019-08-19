@@ -10,24 +10,4 @@ html {
 body {
   min-height: 100%;
 }
-
-.app-main-grid {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-rows: 100px auto;
-      grid-template-rows: 100px auto;
-  grid-gap: 0px;
-  padding: 0px;
-  margin: 0px;
-}
-
-.app-main-menu-row {
-  -ms-grid-row: 1;
-  grid-row: 1;
-}
-
-.app-main-content-row {
-  -ms-grid-row: 2;
-  grid-row: 2;
-}
 /*# sourceMappingURL=app_layout.css.map */
