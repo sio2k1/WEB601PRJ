@@ -1,6 +1,4 @@
 import React, {Component} from 'react';
-import ReactDOM from 'react-dom';
-//import {createStore} from '../../my_redux'
 import './navigation.css';
 import { Link } from "react-router-dom";
 import {connect} from 'react-redux'; 
@@ -15,13 +13,12 @@ class Navigation extends Component
       return <li><Link to="admin">Admin</Link></li> 
     }
   }
+
   login_menu_logoff = () => {
     if (this.props.user_id!==-1) {
       return <li><Link to="/" onClick={this.logoff}>Logoff</Link></li>
     }
   }
-
-
 
   login_unlogged = () => {
     if (this.props.user_id===-1) {
@@ -47,7 +44,6 @@ class Navigation extends Component
   }
 }
 
-
 function mapStateToProps(state) {
   return { 
     user_name: state.login_reducer.user_name ,
@@ -55,11 +51,8 @@ function mapStateToProps(state) {
   }
 }
 
-
-
 export default connect(mapStateToProps)(Navigation)
 
-//export default Navigation;
 
 
 
