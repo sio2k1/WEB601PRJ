@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AACA,AAAA,yBAAyB,CAAA;EAErB,aAAa,ECFG,GAAG;EDGnB,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,MAAM;CACzB;;AACD,AAAA,gBAAgB,CAChB;EAIG,KAAK,ECRG,IAAI;CDYd;;AATD,AAEG,gBAFa,CAEb,CAAC,CAAC;EACE,UAAU,EAAE,IAAI;CACnB",
+    "sources": [
+        "article.scss",
+        "cssvars.scss"
+    ],
+    "names": [],
+    "file": "article.css"
+}

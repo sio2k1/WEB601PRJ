@@ -1,6 +1,7 @@
 import React from 'react'
 import './page_json_parser.css';
 import './flipcards.css';
+import './article.css';
 
 const return_article_content = (json) => { //parsing an artical content to get parag. and img from json
   return ( 
@@ -13,8 +14,8 @@ const return_article_content = (json) => { //parsing an artical content to get p
       if (parag.img !== undefined) //if we have an image - output it
       {
         return (
-        <div className="img-article-container">
-          <img className="img-article" src={require('../../images/'+parag.img)} alt={parag.alt} />
+        <div className="page-json-parser-img-article-container">
+          <img className="page-json-parser-img-article" src={require('../../images/'+parag.img)} alt={parag.alt} />
         </div>
         )
       } else
@@ -35,11 +36,11 @@ const return_pic_grid = (json) => { //parsing header and footer
     if (pic.flipcardtext!==undefined) //if there is a flipcard text - return flipcard structure
     {
       return  (
-        <div className="td-pic">
+        <div className="page-json-parser-td-pic">
           <div className="flip-card">
             <div className="flip-card-inner">
               <div className="flip-card-front">
-                <img className="t-img-auto" src={require('../../images/'+pic.src)} alt={pic.alt} />
+                <img className="page-json-parser-t-img-auto" src={require('../../images/'+pic.src)} alt={pic.alt} />
               </div>
               <div className="flip-card-back">
                 <p>{pic.flipcardtext}</p> 
@@ -52,8 +53,8 @@ const return_pic_grid = (json) => { //parsing header and footer
     else
     { // just return image
       return  (
-        <div className="td-pic">
-          <img className="t-img-auto" src={require('../../images/'+pic.src)} alt={pic.alt} />
+        <div className="page-json-parser-td-pic">
+          <img className="page-json-parser-t-img-auto" src={require('../../images/'+pic.src)} alt={pic.alt} />
         </div> 
       )
     }
@@ -66,7 +67,7 @@ const return_pic_grid = (json) => { //parsing header and footer
   {
 
     return ( 
-      <div className="pic-table-centerer"><table className="pic-table"><tr>
+      <div className="page-json-parser-pic-table-centerer"><table className="page-json-parser-pic-table"><tr>
       {
         json.map((pic) => 
           <td>
@@ -84,7 +85,7 @@ const return_pic_grid = (json) => { //parsing header and footer
  
 }
 
-const json_parser = (json) => { //parsinf incomming json here to JSX
+const json_parser = (json) => { //parsing incoming json here to JSX
     return (
       <div>
         <div className="text-box">

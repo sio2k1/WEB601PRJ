@@ -35,6 +35,7 @@ class Navigation extends Component
        <li><Link to="/">Home</Link></li>
        <li><Link to="about">About</Link></li>
        <li><Link to="price">Price</Link></li>
+       <li><Link to="contacts">Contacts</Link></li>
        {this.login_unlogged()}
        {this.login_menu_admin()}
        {this.login_menu_logoff()}

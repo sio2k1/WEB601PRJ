@@ -1,0 +1,17 @@
+@import '../common/cssvars.scss';
+.article-content-centerer{
+    //margin-top: $article_margin_top;
+    margin-bottom: $article_margin_top;
+    display: flex;
+    justify-content: center;
+ }
+ .article-content
+ {
+    p {
+        margin-top: 10px;
+    }
+    width: $article_w;
+    //background-color: bisque;
+    //display: flex;
+    //justify-content: center; 
+ }

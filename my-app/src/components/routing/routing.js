@@ -9,6 +9,8 @@ import Home from '../home/home'
 import About from '../about/about'
 import Admin from '../admin/admin'
 import Price from '../price/price'
+import Contacts from '../contacts/contacts'
+
 import NotFound from '../defaultpage/404'
 import Defaultpage from '../defaultpage/defaultpage'
 
@@ -34,6 +36,7 @@ class Routing extends React.Component{
                   <Switch>
                     <Route path='/about' component={About} />
                     <Route path='/price' component={Price} />
+                    <Route path='/contacts' component={Contacts} />
                     <Route component={NotFound} status={404} />
                   </Switch>
                 </Defaultpage> 

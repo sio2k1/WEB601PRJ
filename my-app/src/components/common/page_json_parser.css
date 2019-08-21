@@ -1,4 +1,4 @@
-.pic-table-centerer {
+.page-json-parser-pic-table-centerer {
   margin-top: 5vh;
   margin-bottom: 5vh;
   display: -webkit-box;
@@ -9,18 +9,18 @@
           justify-content: center;
 }
 
-.pic-table {
+.page-json-parser-pic-table {
   width: 70vw;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
-.pic-table td {
+.page-json-parser-pic-table td {
   vertical-align: top;
 }
 
-.td-pic {
+.page-json-parser-td-pic {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -33,8 +33,7 @@
           align-items: center;
 }
 
-.article-content-centerer {
-  margin-bottom: 5vh;
+.page-json-parser-img-article-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -43,24 +42,7 @@
           justify-content: center;
 }
 
-.article-content {
-  width: 60vw;
-}
-
-.article-content p {
-  margin-top: 10px;
-}
-
-.img-article-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.img-article {
+.page-json-parser-img-article {
   width: 60vw;
   margin: 20px;
   -webkit-box-shadow: 8px 7px 8px -5px rgba(0, 0, 0, 0.37);
@@ -68,7 +50,7 @@
   border-radius: 7px;
 }
 
-.t-img-auto {
+.page-json-parser-t-img-auto {
   width: 200px;
   height: 200px;
   -webkit-box-shadow: 8px 7px 15px -5px rgba(0, 0, 0, 0.37);
@@ -77,14 +59,14 @@
 }
 
 @media only screen and (max-width: 1024px) {
-  .t-img-auto {
+  .page-json-parser-t-img-auto {
     width: 150px;
     height: 150px;
   }
 }
 
 @media only screen and (max-width: 768px) {
-  .t-img-auto {
+  .page-json-parser-t-img-auto {
     width: 100px;
     height: 100px;
   }
