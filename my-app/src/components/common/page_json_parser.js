@@ -6,11 +6,11 @@ const return_article_content = (json) => { //parsing an artical content to get p
   return ( 
     <div className="article-content-centerer"><div className="article-content">
     {json.map((parag) => {
-      if (parag.paragraph !== undefined)
+      if (parag.paragraph !== undefined) //if we have a paragraph - output it
       {
         return (<p>{parag.paragraph}</p>)
       } else 
-      if (parag.img !== undefined)
+      if (parag.img !== undefined) //if we have an image - output it
       {
         return (
         <div className="img-article-container">
@@ -32,7 +32,7 @@ const return_pic_grid = (json) => { //parsing header and footer
   {
     const pic = props.pic;
 
-    if (pic.flipcardtext!==undefined)
+    if (pic.flipcardtext!==undefined) //if there is a flipcard text - return flipcard structure
     {
       return  (
         <div className="td-pic">
@@ -50,7 +50,7 @@ const return_pic_grid = (json) => { //parsing header and footer
       )
     }
     else
-    {
+    { // just return image
       return  (
         <div className="td-pic">
           <img className="t-img-auto" src={require('../../images/'+pic.src)} alt={pic.alt} />
@@ -84,7 +84,7 @@ const return_pic_grid = (json) => { //parsing header and footer
  
 }
 
-const json_parser = (json) => {
+const json_parser = (json) => { //parsinf incomming json here to JSX
     return (
       <div>
         <div className="text-box">
