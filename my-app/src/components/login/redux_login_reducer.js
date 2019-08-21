@@ -4,14 +4,14 @@ import user_data from '../../jsondata/users.json'
 const action_login = (state, action) =>
 {
   let user_cred={user_found:false};
-  user_data.users.map((u) => {
+  for(let u of user_data.users) {
     if ((u.login.toLowerCase()===action.user_name.toLowerCase())&&(u.pwd===action.pwd))
     {
       user_cred.user_found=true;
       user_cred.login=u.login;
       user_cred.id=u.id;   
     } 
-  })
+  }
   if (user_cred.user_found)
   {
     return Object.assign({}, state, 

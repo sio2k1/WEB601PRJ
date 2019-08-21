@@ -30,7 +30,7 @@ class Navigation extends Component
     
     const user = this.props.user_name;
     return (
-    <nav class="navbar">
+    <nav className="navbar">
     <ul>
        <li><Link to="/">Home</Link></li>
        <li><Link to="about">About</Link></li>
@@ -38,7 +38,7 @@ class Navigation extends Component
        {this.login_unlogged()}
        {this.login_menu_admin()}
        {this.login_menu_logoff()}
-       <li class="username">{user}</li>
+       <li className="username">{user}</li>
     </ul>
     </nav>)
   }

@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import ReactDOM from 'react-dom'
 import {connect} from 'react-redux'; 
 //import {createStore} from '../../my_redux'
 import './login_box.css';

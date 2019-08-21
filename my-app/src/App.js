@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import {BrowserRouter} from 'react-router-dom';
 import {createStore} from 'redux';
 import {Provider} from 'react-redux';
@@ -23,5 +22,5 @@ class AppRoot extends React.Component{
     );
   }
 }
-ReactDOM.render(<AppRoot />,document.getElementById('root'))
+//ReactDOM.render(<AppRoot />,document.getElementById('root')) this is in index.js
 export default AppRoot;

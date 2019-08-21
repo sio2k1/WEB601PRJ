@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import './app_layout.css';
 import Navigation from '../menu/navigation'
 

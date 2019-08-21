@@ -1,7 +1,8 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+//import ReactDOM from 'react-dom';
 import {connect} from 'react-redux'; 
-import {BrowserRouter,Route,Link, Switch} from 'react-router-dom'
+//import {BrowserRouter,Route,Link, Switch} from 'react-router-dom'
+import {Route, Switch} from 'react-router-dom'
 import App_layout from '../app_layout/app_layout'
 import Login from '../login/login'
 import Home from '../home/home'

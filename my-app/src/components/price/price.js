@@ -1,5 +1,4 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
 import './price.css';
 import price_data from '../../jsondata/prices.json'
 import json_parser from './parser/json_parsers_price'

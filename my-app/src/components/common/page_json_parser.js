@@ -1,24 +1,25 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
 import './page_json_parser.css';
 import './flipcards.css';
 
 const return_article_content = (json) => { //parsing an artical content to get parag. and img from json
   return ( 
-    <div class="article-content-centerer"><div class="article-content">
+    <div className="article-content-centerer"><div className="article-content">
     {json.map((parag) => {
-    
-      if (parag.paragraph != undefined)
+      if (parag.paragraph !== undefined)
       {
         return (<p>{parag.paragraph}</p>)
       } else 
-      if (parag.img != undefined)
+      if (parag.img !== undefined)
       {
         return (
-        <div class="img-article-container">
-          <img class="img-article" src={require('../../images/'+parag.img)} alt={parag.alt} />
+        <div className="img-article-container">
+          <img className="img-article" src={require('../../images/'+parag.img)} alt={parag.alt} />
         </div>
         )
+      } else
+      {
+        return (<div></div>)
       }
     })}
     </div></div>
@@ -31,16 +32,16 @@ const return_pic_grid = (json) => { //parsing header and footer
   {
     const pic = props.pic;
 
-    if (pic.flipcardtext!=undefined)
+    if (pic.flipcardtext!==undefined)
     {
       return  (
-        <div class="td-pic">
-          <div class="flip-card">
-            <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <img class="t-img-auto" src={require('../../images/'+pic.src)} alt={pic.alt} />
+        <div className="td-pic">
+          <div className="flip-card">
+            <div className="flip-card-inner">
+              <div className="flip-card-front">
+                <img className="t-img-auto" src={require('../../images/'+pic.src)} alt={pic.alt} />
               </div>
-              <div class="flip-card-back">
+              <div className="flip-card-back">
                 <p>{pic.flipcardtext}</p> 
               </div>
             </div>
@@ -51,8 +52,8 @@ const return_pic_grid = (json) => { //parsing header and footer
     else
     {
       return  (
-        <div class="td-pic">
-          <img class="t-img-auto" src={require('../../images/'+pic.src)} alt={pic.alt} />
+        <div className="td-pic">
+          <img className="t-img-auto" src={require('../../images/'+pic.src)} alt={pic.alt} />
         </div> 
       )
     }
@@ -61,11 +62,11 @@ const return_pic_grid = (json) => { //parsing header and footer
   }
   
 
-  if (json!= undefined) //if header or footer exists in json
+  if (json!== undefined) //if header or footer exists in json
   {
 
     return ( 
-      <div class="pic-table-centerer"><table class="pic-table"><tr>
+      <div className="pic-table-centerer"><table className="pic-table"><tr>
       {
         json.map((pic) => 
           <td>
@@ -86,7 +87,7 @@ const return_pic_grid = (json) => { //parsing header and footer
 const json_parser = (json) => {
     return (
       <div>
-        <div class="text-box">
+        <div className="text-box">
         {return_pic_grid(json.header_pic)}
         {return_article_content(json.data_p)}
         {return_pic_grid(json.bottom_pic)} 

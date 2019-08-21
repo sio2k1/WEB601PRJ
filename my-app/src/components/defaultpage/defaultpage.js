@@ -1,6 +1,4 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
-//import {createStore} from '../../my_redux'
 import './defaultpage.css';
 //import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 
@@ -8,14 +6,14 @@ import './defaultpage.css';
 const Defaultpage = ({ children }) => {
     return (
       <div>
-        <div class="default-page-grid">
+        <div className="default-page-grid">
           <article>
-            <div class="default-page-content">
+            <div className="default-page-content">
               {children}
             </div>
           </article>
           <footer>
-            <div class="default-page-footer"></div>
+            <div className="default-page-footer"></div>
           </footer>
         </div>
       </div>
