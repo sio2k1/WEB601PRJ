@@ -35,7 +35,7 @@ const action_logoff = (state) =>
     })
 }
 
-let initialState = {user_id:-1, user_name:"", wrong_login_pwd:false};
+let initialState = {user_id:1, user_name:"", wrong_login_pwd:false};
 const login_reducer = (state=initialState, action) => {
 
   if (action.type==='TEST')

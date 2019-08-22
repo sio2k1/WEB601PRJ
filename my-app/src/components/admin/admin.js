@@ -11,8 +11,11 @@ const TITLE = 'Admin Page'; //TitleChanger(TITLE);
 const Admin = () => { 
   TitleChanger(TITLE);  
   return (
-      <div>
-        <p>admin page</p>
+      <div className="admin-content-centerer">
+        <div className="admin-wrapper-grid">
+          <div className="admin-menu">menu</div>
+          <div className="admin-content">content</div>
+        </div>
       </div>
       )
     }

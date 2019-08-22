@@ -1,8 +1,9 @@
 {
     "version": 3,
-    "mappings": "AAAA,AAAA,kBAAkB,CAClB;EACI,KAAK,EAAE,OAAe;CACzB",
+    "mappings": "AACA,AAAA,uBAAuB,CAAA;EAEnB,UAAU,ECFM,GAAG;EDGnB,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,MAAM;CAEzB;;AAED,AAAA,mBAAmB,CACnB;EACG,OAAO,EAAC,IAAI;EACZ,qBAAqB,EAAE,SAAS;EAChC,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,IAAI;CACd;;AAEF,AAAA,WAAW,CAAC;EACR,WAAW,EAAE,CAAC;EACd,gBAAgB,EAAE,KAAK;CAE1B;;AAED,AAAA,cAAc,CAAC;EACX,WAAW,EAAE,CAAC;EACd,gBAAgB,EAAE,UAAU;CAE/B",
     "sources": [
-        "admin.scss"
+        "admin.scss",
+        "../common/cssvars.scss"
     ],
     "names": [],
     "file": "admin.css"
