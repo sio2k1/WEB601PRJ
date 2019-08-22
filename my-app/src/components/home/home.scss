@@ -1,7 +1,8 @@
+@import '../common/cssvars.scss';
 .home-grid
 {
     display: grid;
-    grid-template-rows: calc(100vh - 46px);
+    grid-template-rows: calc(100vh - #{$header_h});
     grid-gap: 0px;
 }
 

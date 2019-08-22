@@ -1,4 +1,4 @@
-
+@import '../common/cssvars.scss';
 
 
 .fonts-big-title
@@ -7,16 +7,12 @@
     font-size: 50px;
     color: white;
     text-align: center;
-    //vertical-align:bottom;
-
 }
 
 .grid-wrapper{
     display: grid;
-    grid-template-areas:
-    'top'
-    'head'
-    'log';
+    grid-template-rows:  20vh 10vh auto;
+    height:  calc(100vh - #{$header_h});
     grid-gap: 0px;
     padding: 0px;
     margin: 0px;
@@ -26,26 +22,17 @@
     background-size: cover;
 }
 .top-row{
-    grid-area: top; 
-    height: 20vh;
-    
+    grid-row: 1;   
 }
 
 .header-row{
-    grid-area: head; 
-    height: 10vh;
-
-    //display: flex;
-    //flex-direction: column-reverse;
+    grid-row: 2;
 }
 
 .login-row{
     display: flex;
     justify-content: center;
-    grid-area: log; 
-    //height: calc(60vh - #{$footer-h});
-    height:64vh;
-    
+    grid-row: 3; 
 }
 
 

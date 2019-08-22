@@ -8,7 +8,9 @@
 .grid-wrapper {
   display: -ms-grid;
   display: grid;
-      grid-template-areas: 'top' 'head' 'log';
+  -ms-grid-rows: 20vh 10vh auto;
+      grid-template-rows: 20vh 10vh auto;
+  height: calc(100vh - 46px);
   grid-gap: 0px;
   padding: 0px;
   margin: 0px;
@@ -19,16 +21,12 @@
 
 .top-row {
   -ms-grid-row: 1;
-  -ms-grid-column: 1;
-  grid-area: top;
-  height: 20vh;
+  grid-row: 1;
 }
 
 .header-row {
   -ms-grid-row: 2;
-  -ms-grid-column: 1;
-  grid-area: head;
-  height: 10vh;
+  grid-row: 2;
 }
 
 .login-row {
@@ -39,8 +37,6 @@
       -ms-flex-pack: center;
           justify-content: center;
   -ms-grid-row: 3;
-  -ms-grid-column: 1;
-  grid-area: log;
-  height: 64vh;
+  grid-row: 3;
 }
 /*# sourceMappingURL=login_layout.css.map */
