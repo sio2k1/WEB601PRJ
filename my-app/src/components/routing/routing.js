@@ -31,6 +31,7 @@ class Routing extends React.Component{
               <Switch>
                 {this.login_routes()}
                 <Route exact path='/' component={Home} />
+                <Route path='/home' component={Home} />
                 <Route path='/login' component={Login} />
                 <Defaultpage>
                   <Switch>

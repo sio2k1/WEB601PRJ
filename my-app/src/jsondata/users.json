@@ -1,6 +1,7 @@
 {
     "users": [
         {"id":1, "login":"sio","pwd":"1"},
-        {"id":2, "login":"test","pwd":"2"}
+        {"id":2, "login":"test","pwd":"24e"},
+        {"id":3, "login":"Ali","pwd":"321"}
     ]
 }
