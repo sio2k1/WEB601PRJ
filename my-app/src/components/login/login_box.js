@@ -19,7 +19,7 @@ class Login_box extends Component {
       }
     displayWrongLoginPass = () => {
         if (this.props.wrong_login_pwd===true) {
-          return <p class="login-wrong">Incorrect login/password</p>
+          return <div className="login-wrong">Incorrect login/password</div>
         }
       }
     componentDidMount(){
@@ -28,14 +28,19 @@ class Login_box extends Component {
 
     render() {
         return (
-        <div class="login-box"> {this.renderRedirect()} {/*if we r logged redirect to home*/} 
+        <div className="login-box"> {this.renderRedirect()} {/*if we r logged redirect to home*/} 
           <form onSubmit={this.handleSubmit}>
-              <label for="login">Login:</label>
-              <input class="login-txt-inp" type="text" id="login" name="login"  ref={node => this.login = node} placeholder="Enter login..."/>
-              <label for="pwd">Password:</label>
-              <input class="login-txt-inp" type="password" id="pwd" name="pwd" ref={node => this.pwd = node} placeholder="Enter password..."/>
-              {this.displayWrongLoginPass()}
-              <button class="login-btn" type="submit">Sing In</button>
+              <label for="login">
+                <div className="login-label-wrapper">
+                <div>Login:</div>
+                <div>{this.displayWrongLoginPass()}</div>  
+              </div>
+              </label>
+              <input className="login-txt-inp" type="text" id="login" name="login"  ref={node => this.login = node} placeholder="Enter login..."/>
+              <label className for="pwd">Password:</label>
+              <input className="login-txt-inp" type="password" id="pwd" name="pwd" ref={node => this.pwd = node} placeholder="Enter password..."/>
+              
+              <button className="login-btn" type="submit">Sing In</button>
           </form>
         </div>
         )

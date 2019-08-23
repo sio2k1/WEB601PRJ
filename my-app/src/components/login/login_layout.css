@@ -10,7 +10,7 @@
   display: grid;
   -ms-grid-rows: 20vh 10vh auto;
       grid-template-rows: 20vh 10vh auto;
-  height: calc(100vh - 46px);
+  height: calc(100vh - 48px);
   grid-gap: 0px;
   padding: 0px;
   margin: 0px;

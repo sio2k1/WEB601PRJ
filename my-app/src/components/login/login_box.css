@@ -1,5 +1,5 @@
 .login-box {
-  height: 220px;
+  height: 230px;
   width: 400px;
   padding: 10px;
   background-color: white;
@@ -35,5 +35,16 @@
 
 .login-wrong {
   color: red;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  justify-self: flex-end;
+  width: 200px;
+}
+
+.login-label-wrapper {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 50% 50%;
+      grid-template-columns: 50% 50%;
 }
 /*# sourceMappingURL=login_box.css.map */

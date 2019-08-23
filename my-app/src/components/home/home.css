@@ -1,8 +1,8 @@
 .home-grid {
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: calc(100vh - 46px);
-      grid-template-rows: calc(100vh - 46px);
+  -ms-grid-rows: calc(100vh - 48px);
+      grid-template-rows: calc(100vh - 48px);
   grid-gap: 0px;
 }
 
