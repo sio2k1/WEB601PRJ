@@ -1,1 +1,1 @@
-[Readme is located in project folder](./my-app/README.md)
+[Readme is located in project folder](my-app/README.md)

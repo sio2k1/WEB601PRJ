@@ -1,4 +1,4 @@
-let TitleChanger = title =>
+const TitleChanger = title =>
 {
     document.title=title;
 }
