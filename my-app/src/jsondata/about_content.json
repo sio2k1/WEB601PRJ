@@ -11,7 +11,6 @@
     { "src": "about_chic.jpg", "alt":"Chicken" }
   ],
 
-  "title": "About",
   "data_p": [
     {"paragraph":"Hou Xueying, a mother from Shanghai, was tired of food safety scares and of a city life disconnected from the land. So she moved her family to the country to learn about sustainable farming. Her parents disapproved; they had struggled to give her a comfortable life in the city—they could not understand why she would throw it away. When she got to the country, she found that the older generation of farmers could only tell her how to grow as they did, using chemical fertilizers, toxic insecticides."},
     {"paragraph":"Still, she persisted, and today she runs a diversified organic farm that is, in her words, a “self-reliant ecosystem.” She raises a wide variety of animals and crops, making use of ingenious techniques—like allowing ducks into the rice paddies—to fertilize plants and eliminate pests without using chemicals. She’s also turned her farm into a place of learning, teaching children from the city where their food comes from. Through all of this, Hou Xueying has found a community that shares her values for the first time. She believes that the importance of the farming way of life extends far beyond putting good food on the table. As she explains in the short film, Farmed with Love, “Only conscious foodies can save the world.”"},
@@ -20,6 +19,4 @@
     {"paragraph":"Every person on earth needs food every day. Every day, food is tended, harvested, transported, stored, and served up on our tables. In a very real sense, food cannot be separated from life itself. And so it has been said that changing the way we grow and eat food is one of the most powerful tools we have for changing our economies and society as a whole."},
     
     {"paragraph":"Retrieved from https://www.commondreams.org/views/2019/06/05/farms-future article is licensed under a Creative Commons Attribution-Share Alike 3.0 License."}
-  ],
-  
-  "data": "parag"}
+  ]}
