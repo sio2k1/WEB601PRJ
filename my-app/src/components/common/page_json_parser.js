@@ -3,7 +3,7 @@ import './page_json_parser.css';
 import './flipcards.css';
 import './article.css';
 
-const return_article_content = (json) => { //parsing an artical content to get parag. and img from json
+const return_article_content = (json) => { //parsing an article content to get parag. and img from json
   return ( 
     <div className="article-content-centerer"><div className="article-content">
     {json.map((parag) => {

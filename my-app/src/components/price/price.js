@@ -10,7 +10,7 @@ const Price = () => {
   TitleChanger(TITLE);
   return (
     <div>
-      {json_parser(price_data)}
+      {json_parser(price_data)} {/*call a parser to parse price list into jsx table */}
     </div>
     )
   }

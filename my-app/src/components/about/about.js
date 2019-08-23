@@ -10,7 +10,7 @@ const About = () => {
   TitleChanger(TITLE);
   return (
     <div>
-      {json_parser(about_data)}
+      {json_parser(about_data) /*calling an article parser to make jsx from local json */}
     </div>
     )
   }

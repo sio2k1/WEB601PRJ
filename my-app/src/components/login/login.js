@@ -9,17 +9,13 @@ const Login = () => {
     TitleChanger(TITLE);
     return (
         <div className="grid-wrapper">
-            <div className="top-row">    
-                    
-            </div>
+            <div className="top-row"></div>
             <div className="header-row">    
-                    <p className="fonts-big-title"></p>
+                <p className="fonts-big-title"></p>
             </div>
             <div className="login-row">
                 <Login_box />
             </div>
-           
-
         </div>
       )
     }

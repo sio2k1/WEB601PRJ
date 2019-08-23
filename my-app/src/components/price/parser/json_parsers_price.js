@@ -1,22 +1,18 @@
 import React from 'react'
-//import './page_json_parser.css';
-//import './flipcards.css';
-
-
 
 const TableLine = props => //return table line prices
 {
     return (
         <tr>
-                <td>
-                    <p>{props.line.item_name}</p>
-                </td>
-                <td>
-                    <p>{props.line.price} </p>
-                </td>
-                <td>
-                    <p>{props.line.units} </p>
-                </td>
+            <td>
+                <p>{props.line.item_name}</p>
+            </td>
+            <td>
+                <p>{props.line.price} </p>
+            </td>
+            <td>
+                <p>{props.line.units} </p>
+            </td>
         </tr>
     )
 }
