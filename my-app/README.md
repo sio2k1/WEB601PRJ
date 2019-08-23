@@ -15,7 +15,7 @@ Available routes:
 All routes are available from menu, admin is available only after successful login, 404 page is available at unexisting routes, including /admin before login.
 
 # Data
-Data for site located in [src/jsondata/](/src/jsondata/) 
+Data for site located in [src/jsondata/](src/jsondata/) 
 * About article data in about_content.json
 * Price list in prices.json
 * User credentials in users.json (this is for MS1 dev reasons only, users and passwords should not ever be located that way)
