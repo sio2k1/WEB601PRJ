@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './navigation.css';
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import {connect} from 'react-redux'; 
 import {a_logoff} from '../login/redux_login_actions'
 
@@ -10,7 +10,7 @@ class Navigation extends Component
   
   login_menu_admin = () => {
     if (this.props.user_id!==-1) {
-      return <li><Link to="admin">Admin</Link></li> 
+      return <li><NavLink to="/admin" activeClassName="navbar-active-link">Admin</NavLink></li> 
     }
   }
 
@@ -22,7 +22,7 @@ class Navigation extends Component
 
   login_unlogged = () => { //show login button in menu, if we haven't login yet
     if (this.props.user_id===-1) {
-      return <li><Link to="login">Login</Link></li>
+      return <li><NavLink to="login" activeClassName="navbar-active-link">Login</NavLink></li>
     }
   }
 
@@ -32,10 +32,10 @@ class Navigation extends Component
     return (
     <nav className="navbar">
     <ul>
-       <li><Link to="/">Home</Link></li>
-       <li><Link to="about">About</Link></li>
-       <li><Link to="price">Price</Link></li>
-       <li><Link to="contacts">Contacts</Link></li>
+       <li><NavLink exact  to="/" activeClassName="navbar-active-link">Home</NavLink></li>
+       <li><NavLink to="/about" activeClassName="navbar-active-link">About</NavLink></li>
+       <li><NavLink to="/price" activeClassName="navbar-active-link">Price</NavLink></li>
+       <li><NavLink to="/contacts" activeClassName="navbar-active-link">Contacts</NavLink></li>
        {this.login_unlogged() /*show login if you are un logged */}
        {this.login_menu_admin() /*show admin if you are logged */}
        {this.login_menu_logoff() /*show logoff if you are logged */}

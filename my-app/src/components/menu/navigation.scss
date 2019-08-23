@@ -1,6 +1,6 @@
 .navbar
 {    
-    position: -webkit-sticky; /* Safari */
+    //position: -webkit-sticky; /* Safari */
     position: sticky;
     top: 0;
     list-style-type: none;
@@ -13,10 +13,13 @@
     z-index: 1;
   
 }
+
+
  
 .navbar li {
     //float: left;
     display:inline;
+
 }
 
 .navbar .username {
@@ -36,13 +39,27 @@
     padding: 14px 16px;
     text-decoration: none;
     display:inline-block;
+
+
 }
 
 .navbar li a:hover:not(.active) {
     background-color: #ddd;
 }
 
-.navbar li a.active {
-    color: white;
-    background-color: #4CAF50;
+.navbar-active-link {
+    //color: white;
+    background-color:  #ddd;
+   
 }
+.navbar-active-link:-moz-focusring { 
+
+    outline: 0px;
+
+} 
+
+.navbar li a:-moz-focusring { 
+
+    outline: 0px;
+
+} 
