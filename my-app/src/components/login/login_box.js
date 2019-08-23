@@ -22,6 +22,9 @@ class Login_box extends Component {
           return <p class="login-wrong">Incorrect login/password</p>
         }
       }
+    componentDidMount(){
+      this.login.focus(); // ser cursor to username/login input on loaded
+    }
 
     render() {
         return (
