@@ -11,7 +11,6 @@ export function createStore(reducer, initialState){
 
     const subscribe = callback => {
         callbacks.push(callback);
-        //return () => callbacks.filter(c => c !== callback);
         return ()=> {callbacks = callbacks.filter(c => c !== callback);};
     };
 
