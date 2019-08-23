@@ -1,6 +1,6 @@
 import React from 'react'
 import './login_layout.css';
-import Login_box from './login_box'
+import LoginBox from './login_box'
 import TitleChanger from '../../functions/titlechanger'
 
 const TITLE = 'Contacts Page'; //TitleChanger(TITLE);
@@ -14,7 +14,7 @@ const Login = () => {
                 <p className="fonts-big-title"></p>
             </div>
             <div className="login-row">
-                <Login_box />
+                <LoginBox />
             </div>
         </div>
       )

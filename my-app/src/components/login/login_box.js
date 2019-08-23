@@ -4,7 +4,7 @@ import './login_box.css';
 import {a_login} from './redux_login_actions'
 import { Redirect } from 'react-router-dom'
 
-class Login_box extends Component {
+class LoginBox extends Component {
 
     login;
     pwd;
@@ -52,4 +52,4 @@ function mapStateToProps(state) {
   return { user_id: state.login_reducer.user_id, wrong_login_pwd: state.login_reducer.wrong_login_pwd}
 }
   
-export default connect(mapStateToProps,)(Login_box)
+export default connect(mapStateToProps,)(LoginBox)
