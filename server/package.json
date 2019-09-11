@@ -1,0 +1,18 @@
+{
+  "name": "hello-simple",
+  "version": "1.0.0",
+  "description": "desc",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.15.4",
+    "knex": "^0.19.4",
+    "mssql": "^5.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "sio",
+  "license": "MIT"
+}
