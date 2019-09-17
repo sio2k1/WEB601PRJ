@@ -1,20 +1,18 @@
 const about_data = require('./about_content.json');
-var path = require('path')
-//const knexfile = require('./knexfile');
+
 
 var knex = require('knex')({
-  client: 'sqlite3',
+  client: 'mssql',
   connection: {
-    filename: path.join(__dirname,'sdb.db')
+    host : '127.0.0.1',
+    user : 'web601_user',
+    password : 'web601',
+    database : 'web601'
   }
 });
 
-
-//knex = require('knex')(knexfile);
-
-
 //knex.raw("exec pages_get_page ''").then(result => { console.log(result); }).catch(error => { console.log(error); });
-/*knex.raw("exec pages_get_page :x1",{x1:'test'}).then(
+knex.raw("exec pages_get_page :x1",{x1:'test'}).then(
 
   (rows) => {
     for (row of rows) {
@@ -22,29 +20,10 @@ var knex = require('knex')({
     }
   }
 
-).catch(error => { console.log(error); });*/
+).catch(error => { console.log(error); });
 
 
 
-knex.select().table('users').then(
-  (rows) => {
-    for (row of rows) {
-        console.log(row['id']);
-    }
-  }
-);
-
-/*
-knex('users').where({
-  id: 1
-}).select('id','username','password').then(
-  (rows) => {
-    for (row of rows) {
-        console.log(row['response']);
-    }
-  }
-).catch(error => { console.log(error); });;
-*/
 
 //.then(
   //(version) => console.log(version));

@@ -22,15 +22,18 @@ class Navigation extends Component
 
   login_unlogged = () => { //show login button in menu, if we haven't login yet
     if (this.props.user_id===-1) {
-      return <li><NavLink to="login" activeClassName="navbar-active-link">Login</NavLink></li>
+      return <li><NavLink to="/login" activeClassName="navbar-active-link">Login</NavLink></li>
     }
   }
 
   render() {
     const user = this.props.user_name;
     return (
-    <nav className="navbar">
-      <ul>
+    <header className="header">
+      {/* <div className="logo"></div> */}
+      <input className="menu-btn" type="checkbox" id="menu-btn" />
+      <label className="menu-icon" for="menu-btn"><span className="navicon"></span></label>
+      <ul class="menu">
         <li><NavLink exact to="/" activeClassName="navbar-active-link">Home</NavLink></li>
         <li><NavLink to="/about" activeClassName="navbar-active-link">About</NavLink></li>
         <li><NavLink to="/price" activeClassName="navbar-active-link">Price</NavLink></li>
@@ -39,8 +42,8 @@ class Navigation extends Component
         {this.login_menu_admin() /*show admin if you are logged */}
         {this.login_menu_logoff() /*show logoff if you are logged */}
         <li className="username">{user}</li> {/*show user name if you are logged */}
-      </ul>
-    </nav>)
+      </ul> 
+    </header>)
   }
 }
 
