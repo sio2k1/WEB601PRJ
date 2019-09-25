@@ -8,7 +8,7 @@
     .from('PriceList')
     /*We going to use a promise based lib */
     .then( data =>  res.status(200).json(data))
-    //.catch(error => res.status(500).json(error))
+    .catch(error => res.status(500).json(error))
     
     
     //res.send('pricelist2');
