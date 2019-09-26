@@ -11,7 +11,7 @@ const commonFunc = require('../common/common');
 router.get('/pricelist', handlers.getPricelist );
 
 router.get('/pricelist/:id', commonFunc.checkID, handlers.getPricelistById);
- 
+router.post('/pricelist',jsonParser, handlers.postPricelist ); 
 
 /*
 router.get('/pricelist', routes.employeesList.listAllEmployeesKnex);
