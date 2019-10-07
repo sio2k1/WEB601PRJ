@@ -3,16 +3,17 @@ const app = express();
 const router = express.Router();
 
 const bodyParser = require('body-parser');
-const jsonParser = bodyParser.json(); /*We only going to use the jasonParser as middleware */
+const jsonParser = bodyParser.json(); /*We only going to use the jsonParser as middleware */
 const handlers = require('./handlers');
 
 const commonFunc = require('../common/common');
 
 router.get('/pricelist', handlers.getPricelist );
-
 router.get('/pricelist/:id', commonFunc.checkID, handlers.getPricelistById);
-router.post('/pricelist',jsonParser, handlers.postPricelist ); 
-
+router.post('/pricelist',jsonParser, handlers.post ); 
+router.patch('/pricelist/:id', jsonParser, commonFunc.checkID, handlers.patchById)
+router.delete('/pricelist/:id', commonFunc.checkID,  handlers.deleteById)
+//
 /*
 router.get('/pricelist', routes.employeesList.listAllEmployeesKnex);
 
