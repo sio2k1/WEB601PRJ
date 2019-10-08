@@ -8,9 +8,9 @@ const handlers = require('./handlers');
 
 const commonFunc = require('../common/common');
 
-router.get('/pricelist', handlers.getPricelist );
+router.get('/pricelist', handlers.getPricelist);
 router.get('/pricelist/:id', commonFunc.checkID, handlers.getPricelistById);
-router.post('/pricelist',jsonParser, handlers.post ); 
+router.post('/pricelist', jsonParser, handlers.post); 
 router.patch('/pricelist/:id', jsonParser, commonFunc.checkID, handlers.patchById)
 router.delete('/pricelist/:id', commonFunc.checkID,  handlers.deleteById)
 //

@@ -1,7 +1,7 @@
  const getPricelist =  (req, res) =>{ 
    const { knex } = req.app.locals
     knex
-    .select('*')
+    .select('SalesItemName as item_name', 'Price as price', 'SalesItemUnits as units')
     .from('PriceList')
     .leftJoin('SalesItems', 'PriceList.SalesItemId', 'SalesItems.SalesItemId')
     /*We going to use a promise based lib */
