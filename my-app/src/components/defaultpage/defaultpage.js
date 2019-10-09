@@ -1,5 +1,6 @@
 import React from 'react'
 import './defaultpage.css';
+import { Route } from "react-router-dom";
 //import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 
 
@@ -19,4 +20,17 @@ const Defaultpage = ({ children }) => {
       </div>
       )
     }
-export default Defaultpage;
+
+
+    const DefaultLayoutRoute = ({component: Component, ...rest}) => {  
+      return (  
+          <Route {...rest} render={matchProps => (  
+          <Defaultpage>  
+              <Component {...matchProps} />  
+          </Defaultpage>  
+          )} />  
+      )  
+      };  
+  
+  export default DefaultLayoutRoute;
+//export default Defaultpage;

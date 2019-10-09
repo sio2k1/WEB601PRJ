@@ -67,14 +67,14 @@ const return_pic_grid = (json) => { //parsing header and footer
   {
 
     return ( 
-      <div className="page-json-parser-pic-table-centerer"><table className="page-json-parser-pic-table"><tr>
+      <div className="page-json-parser-pic-table-centerer"><table className="page-json-parser-pic-table"><tbody><tr>
       {
         json.map((pic) => 
           <td>
             <GenCard pic={pic} />
           </td>)
       }
-      </tr></table></div>
+      </tr></tbody></table></div>
     )
 
   } else //if header or footer not exists in json return empty div

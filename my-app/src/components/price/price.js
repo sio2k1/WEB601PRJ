@@ -1,55 +1,37 @@
 import React from 'react'
 import './price.css';
-import price_data from '../../jsondata/prices.json'
-import json_parser from './parser/json_parsers_price'
-import TitleChanger from '../../functions/titlechanger'
+import json_parser from './parser/json_parsers_price' //parse json from api to jsx
+import TitleChanger from '../../functions/titlechanger' //for title change
+import api from '../../api_list/api_price_list_axios' //load api connector fot this particular component
 
 const TITLE = 'Prices Page'; //TitleChanger(TITLE);
-
 
 class Price extends React.Component {
   constructor(props) {
     super(props);
-
-    this.state = {table:[]}
-
+    this.state = {price_table:[]} //set default value as empty array
   }
 
-  componentDidMount()
+  async componentDidMount()
   {
-    fetch('http://localhost:3001/api/pricelist/')
-    .then(response => response.json())
-    .then(data => {
-      console.log(data);
-      this.setState({
-        table: data
-      });
-    });
-    
-    
-    /*
-    fetch('http://localhost:3001/api/pricelist/',{ mode: "no-cors"})
-		.then(res => res.json())
-		.then(data => {
-			if(data.cod === '404') {		
-      } else 
-      {
-        console.log(data);	  
-        this.setState({
-                table: data
-            });
-      }
-		})
-		.catch(err => {
-		   console.log(err);
-        })*/
-    //console.log(this.state);	
+    try {
+      let inData = await api.get('/'); // using axios request api root (api url set up in import api from 'FILEPATH')
+      this.setState({price_table: inData.data}); // adding json from api to state
+    } catch(err)
+    {
+      console.error("Error response:");
+      console.error(err.response);    
+    }
   }
+
   render() {
-    TitleChanger(TITLE);
+    
+    TitleChanger(TITLE); //rendering title
+  
+     //parsing json to jsx in return
     return (
       <div>     
-         {json_parser(this.state)} 
+        {json_parser(this.state.price_table)} 
       </div>
     );
   }
@@ -58,14 +40,4 @@ class Price extends React.Component {
 //{json_parser(this.state)} 
 export default Price;
 
-/*
-const Price = () => { //call a parser to parse price list into jsx table 
-  TitleChanger(TITLE);
-  return (
-    <div>
-      {json_parser(price_data)} 
-    </div>
-    )
-  }
-export default Price;*/
 

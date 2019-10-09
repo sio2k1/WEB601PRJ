@@ -21,23 +21,22 @@ const return_price_table = json => //return table with prices
 {
     return (
         <div className="price-table-centerer">
-            <table>
+            <table><tbody>
             {
                 json.map((line) => 
-                    <TableLine line={line} />
+                    <TableLine key={line.id} line={line} />
                 )
             }
-            </table>
+            </tbody></table>
         </div>
     )
-
 }
 
 const json_parser = (json) => {
     return (
       <div>
         <div className="text-box">
-            {return_price_table(json.table)}
+            {return_price_table(json)}
         </div> 
       </div>
       )

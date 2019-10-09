@@ -1,7 +1,5 @@
 import React from 'react';
-//import ReactDOM from 'react-dom';
 import {connect} from 'react-redux'; 
-//import {BrowserRouter,Route,Link, Switch} from 'react-router-dom'
 import {Route, Switch} from 'react-router-dom'
 import AppLayout from '../app_layout/app_layout'
 import Login from '../login/login'
@@ -10,9 +8,10 @@ import About from '../about/about'
 import Admin from '../admin/admin'
 import Price from '../price/price'
 import Contacts from '../contacts/contacts'
+import AdminLayoutRoute from '../admin/admin_layout'
 
 import NotFound from '../defaultpage/404'
-import Defaultpage from '../defaultpage/defaultpage'
+import DefaultLayoutRoute from '../defaultpage/defaultpage'
 
 
 //this is our routing container, it combines app layout and routes.
@@ -21,28 +20,42 @@ class Routing extends React.Component{
   
     login_routes = () => { // if we r logged add admin route
       if (this.props.user_id!==-1) {
-        return (<Route path='/admin' component={Admin} />)
+        return (
+        <nn>
+        
+            
+                <AdminLayoutRoute path='/admin' component={Admin} />
+                <AdminLayoutRoute path='/admin4' component={Admin} />
+                </nn>     
+        
+        )
       }
     }
-    
+    //{this.login_routes() /* additional routes if logged in */}
     render(){
       return (
         <div>
-          <AppLayout />
-          <Switch>
-            {this.login_routes() /* additional routes if logged in */}
-            <Route exact path='/' component={Home} />
-            <Route path='/home' component={Home} />
-            <Route path='/login' component={Login} />
-            <Defaultpage>
-              <Switch>
-                <Route path='/about' component={About} />
-                <Route path='/price' component={Price} />
-                <Route path='/contacts' component={Contacts} />
-                <Route component={NotFound} status={404} />
-              </Switch>
-            </Defaultpage> 
-          </Switch>
+          <AppLayout>
+            <Switch>
+              
+              <AdminLayoutRoute path='/admin' component={Admin} />
+              <AdminLayoutRoute path='/admin/one' component={Admin} />
+              <AdminLayoutRoute path='/admin/two' component={Admin} />
+              <Route exact path='/' component={Home} />
+              <Route path='/home' component={Home} />
+              <Route path='/login' component={Login} />
+             
+              
+                  <DefaultLayoutRoute path='/about' component={About} />
+                  <DefaultLayoutRoute path='/price' component={Price} />
+                  <DefaultLayoutRoute path='/contacts' component={Contacts} />
+                  <DefaultLayoutRoute component={NotFound} status={404} />
+               
+             
+             
+            </Switch>
+           
+          </AppLayout>
         </div>
       );
     }
@@ -54,4 +67,4 @@ function mapStateToProps(state) {
   
   
   
-export default connect(mapStateToProps,)(Routing)
+export default connect(mapStateToProps)(Routing)

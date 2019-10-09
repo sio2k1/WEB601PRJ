@@ -32,8 +32,8 @@ class Navigation extends Component
     <header className="header">
       {/* <div className="logo"></div> */}
       <input className="menu-btn" type="checkbox" id="menu-btn" />
-      <label className="menu-icon" for="menu-btn"><span className="navicon"></span></label>
-      <ul class="menu">
+      <label className="menu-icon" htmlFor="menu-btn"><span className="navicon"></span></label>
+      <ul className="menu">
         <li><NavLink exact to="/" activeClassName="navbar-active-link">Home</NavLink></li>
         <li><NavLink to="/about" activeClassName="navbar-active-link">About</NavLink></li>
         <li><NavLink to="/price" activeClassName="navbar-active-link">Price</NavLink></li>
