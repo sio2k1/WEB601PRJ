@@ -10,15 +10,17 @@ const TITLE = 'Admin Page'; //TitleChanger(TITLE);
 const AdminLayout = ({children}) => {  
   TitleChanger(TITLE);  
   return (
-      <div className="admin-content-centerer">
-        <div className="admin-wrapper-grid">
-          <div className="admin-menu">
-          <ul>
-            <li><NavLink exact to="/admin/one" >One</NavLink></li>
-            <li><NavLink exact to="/admin/two" >Two</NavLink></li>
-        </ul>
-          </div>
-          <div className="admin-content">{children}</div>
+      <div className="admin-content-bg">
+        <div className="admin-content-centerer">
+            <div className="admin-wrapper-grid">
+            <div className="admin-menu">
+            <ul>
+                <li><NavLink exact to="/admin/pl-editor" >Price Editor</NavLink></li>
+                <li><NavLink exact to="/admin/two" >Two</NavLink></li>
+            </ul>
+            </div>
+            <div className="admin-content">{children}</div>
+            </div>
         </div>
       </div>
       )

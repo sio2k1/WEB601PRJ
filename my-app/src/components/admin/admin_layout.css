@@ -1,5 +1,10 @@
+.admin-content-bg {
+  margin: 0px;
+  height: calc(100vh - 48px);
+  background-color: whitesmoke;
+}
+
 .admin-content-centerer {
-  margin-top: 5vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -9,12 +14,12 @@
 }
 
 .admin-wrapper-grid {
+  margin-top: 5vh;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 20vw auto;
       grid-template-columns: 20vw auto;
   width: 90vw;
-  height: 80vh;
 }
 
 .admin-menu {
@@ -26,6 +31,5 @@
 .admin-content {
   -ms-grid-column: 2;
   grid-column: 2;
-  background-color: aquamarine;
 }
 /*# sourceMappingURL=admin_layout.css.map */

@@ -5,8 +5,9 @@ function checkID(req, res, next) {
     if id is not an integer then we are going to do something */
     const id = +req.params.id
     if (Number.isInteger(id)) {
-        next() // Next function will allow the next middleware function to execute. 
+        next(); // Next function will allow the next middleware function to execute. 
     } else {
+        console.log('ID must be an integer');
         return res.status(400).json('ID must be an integer');
     }
 }

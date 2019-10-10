@@ -1,16 +1,32 @@
 @import '../common/cssvars.scss';
+
+
+.admin-content-bg
+{
+    margin:0px;
+    height: calc(100vh - #{$header_h});
+    background-color: rgb(245, 245, 245);
+    //display: grid;
+    //grid-template-rows: calc(100vh - #{$header_h});
+    
+}
+
 .admin-content-centerer{
-    margin-top: $article_margin_top;
+   
     display: flex;
     justify-content: center;
+    
  }
 
  .admin-wrapper-grid
  {
+    margin-top: $article_margin_top;
     display:grid;
     grid-template-columns: 20vw auto;
     width: 90vw;
-    height: 80vh;
+    
+    //height: 80vh;
+    //height: calc(#{$article_h} - #{$article_margin_top} - #{$header_h});
  }
 
 .admin-menu { 
@@ -20,5 +36,10 @@
 
 .admin-content {
     grid-column: 2;
-    background-color: aquamarine;  
+   // background-color: aquamarine;  
 }
+
+
+
+
+

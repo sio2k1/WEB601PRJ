@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "pl_editor.scss",
+        "../../common/cssvars.scss"
+    ],
+    "names": [],
+    "file": "pl_editor.css"
+}

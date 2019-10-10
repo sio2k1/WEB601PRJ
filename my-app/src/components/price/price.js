@@ -3,7 +3,7 @@ import './price.css';
 import json_parser from './parser/json_parsers_price' //parse json from api to jsx
 import TitleChanger from '../../functions/titlechanger' //for title change
 import api from '../../api_list/api_price_list_axios' //load api connector fot this particular component
-
+ 
 const TITLE = 'Prices Page'; //TitleChanger(TITLE);
 
 class Price extends React.Component {

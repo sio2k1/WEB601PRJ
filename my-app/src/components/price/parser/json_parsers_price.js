@@ -5,13 +5,13 @@ const TableLine = props => //return table line prices
     return (
         <tr>
             <td>
-                <p>{props.line.item_name}</p>
+                <p>{props.line.SalesItemName}</p>
             </td>
             <td>
-                <p>{props.line.price} </p>
+                <p>{props.line.Price} </p>
             </td>
             <td>
-                <p>{props.line.units} </p>
+                <p>{props.line.SalesItemUnits} </p>
             </td>
         </tr>
     )
