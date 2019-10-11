@@ -16,7 +16,7 @@ const AdminLayout = ({children}) => {
             <div className="admin-menu">
             <ul>
                 <li><NavLink exact to="/admin/pl-editor" >Price Editor</NavLink></li>
-                <li><NavLink exact to="/admin/two" >Two</NavLink></li>
+                <li><NavLink exact to="/admin/user-editor" >User Editor</NavLink></li>
             </ul>
             </div>
             <div className="admin-content">{children}</div>
@@ -44,11 +44,6 @@ class AdminLayoutRoute extends React.Component {
         }
     }
 }
-
-
-
-
-
 
 function mapStateToProps(state) {
     return { user_id: state.login_reducer.user_id }

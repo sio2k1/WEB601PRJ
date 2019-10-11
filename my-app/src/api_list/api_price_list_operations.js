@@ -10,9 +10,9 @@ export default axios.create({
 });
 */
 
-const FGet = async (api) =>
+const FGet = async (api) => // for get queries
 {
-    console.log('getting');
+    //console.log('getting');
     let inDt=null;
     try 
     {
@@ -23,13 +23,12 @@ const FGet = async (api) =>
         console.error("Error response:");
         console.error(err.response);    
     }
-    return inDt;  
-     
+    return inDt;   
 }
 
-const FDelete = async (json, api) =>
+const FDelete = async (json, api) => //delete
 {
-    console.log(json);
+    //console.log(json);
     await api.delete(`/${json.id}`)    // this one need id filed provided, we add id from WhatEverId field before coming here
 }
 
@@ -39,9 +38,9 @@ const FAdd = async (json, api) => // this function returns inserted object from 
     return inData.data[0];   
 }
 
-const FUpdate = async (json, api) =>
+const FUpdate = async (json, api) => //patch
 {
-    console.log(json);
+    //console.log(json);
     await api.patch(`/${json.id}`, {data:json})    // this one need id filed provided, we add id from WhatEverId field before coming here
 }
 

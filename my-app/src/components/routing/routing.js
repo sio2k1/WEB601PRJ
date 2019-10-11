@@ -8,6 +8,7 @@ import About from '../about/about'
 import Price from '../price/price'
 import Contacts from '../contacts/contacts'
 import PlEditor from '../admin/price_editor/pl_editor'
+import UEditor from '../admin/users_editor/u_editor'
 import AdminLayoutRoute from '../admin/admin_layout' // pages with special layout for admin panel
 import DefaultLayoutRoute from '../defaultpage/defaultpage' // pages with default layout 
 import NotFound from '../defaultpage/404' //component for 404 page not found
@@ -22,10 +23,10 @@ const Routing = () =>
       <Route path='/home' component={Home} />
       <Route path='/login' component={Login} />
       
-      <AdminLayoutRoute path='/admin' component={PlEditor} />
+      <AdminLayoutRoute exact path='/admin' component={PlEditor} />
       <AdminLayoutRoute path='/admin/pl-editor' component={PlEditor} />
-      <AdminLayoutRoute path='/admin/two' component={PlEditor} />
-      
+      <AdminLayoutRoute path='/admin/user-editor' component={UEditor} />
+       
       <DefaultLayoutRoute path='/about' component={About} />
       <DefaultLayoutRoute path='/price' component={Price} />
       <DefaultLayoutRoute path='/contacts' component={Contacts} />

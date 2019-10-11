@@ -3,7 +3,7 @@ import './price.css';
 import json_parser from './parser/json_parsers_price' //parse json from api to jsx
 import TitleChanger from '../../functions/titlechanger' //for title change
 import api from '../../api_list/api_price_list_axios' //load api connector fot this particular component
- 
+import * as operations from '../../api_list/api_price_list_operations'
 const TITLE = 'Prices Page'; //TitleChanger(TITLE);
 
 class Price extends React.Component {
@@ -14,14 +14,9 @@ class Price extends React.Component {
 
   async componentDidMount()
   {
-    try {
-      let inData = await api.get('/'); // using axios request api root (api url set up in import api from 'FILEPATH')
-      this.setState({price_table: inData.data}); // adding json from api to state
-    } catch(err)
-    {
-      console.error("Error response:");
-      console.error(err.response);    
-    }
+    let inData = await operations.FGet(api) // using axios request api root (api url set up in import api from 'FILEPATH')
+    this.setState({price_table: inData.data}); // adding json from api to state
+    console.log(inData.data);
   }
 
   render() {

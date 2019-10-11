@@ -8,7 +8,7 @@ const knexcfg = require('./knexfile')
 const knex = require('knex')(knexcfg);
 
 
-const start_ = () => {
+const start = () => {
 
     app.locals.knex = knex; 
 
@@ -25,5 +25,5 @@ const start_ = () => {
     });
 }
 
-module.exports = {start_};
+module.exports = {start};
 
