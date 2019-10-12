@@ -1,7 +1,7 @@
 
  
  
- const getPricelist =  (req, res) =>{ 
+ const getAll =  (req, res) =>{ 
    const { knex } = req.app.locals
     knex
     //.select('PriceListId as id','SalesItemName as item_name', 'Price as price', 'SalesItemUnits as units')
@@ -14,7 +14,7 @@
     
 }
 
-const getPricelistById = (req, res) =>{
+const getById = (req, res) =>{
     const { knex } = req.app.locals;
     const { id } = req.params;
     knex
@@ -194,5 +194,5 @@ const deleteById = async (req, res) =>{
 
 
 module.exports = {
-    getPricelist, getPricelistById, post, patchById, deleteById
+    getAll, getById, post, patchById, deleteById
 }

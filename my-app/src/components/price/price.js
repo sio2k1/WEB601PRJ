@@ -15,8 +15,11 @@ class Price extends React.Component {
   async componentDidMount()
   {
     let inData = await operations.FGet(api) // using axios request api root (api url set up in import api from 'FILEPATH')
-    this.setState({price_table: inData.data}); // adding json from api to state
-    console.log(inData.data);
+    if (inData!==null) // if we cannot get any response from server, show nothing
+    {
+      this.setState({price_table: inData}); // adding json from api to state
+    }
+    console.log(inData);
   }
 
   render() {

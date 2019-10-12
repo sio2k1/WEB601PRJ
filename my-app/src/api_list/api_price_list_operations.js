@@ -10,6 +10,24 @@ export default axios.create({
 });
 */
 
+const FGetById = async (api, id) => // for get queries
+{
+    //console.log('gettingbyid');
+    let inDt=null;
+    try 
+    {
+        inDt = await api.get(`/${id}`)  // using axios request api root (api url set up in import api from 'FILEPATH') 
+        inDt = inDt.data[0]; 
+        
+    } catch(err)
+    {
+        console.error("Error response:");
+        console.error(err.response);    
+    }
+    
+    return inDt; 
+}
+
 const FGet = async (api) => // for get queries
 {
     //console.log('getting');
@@ -23,7 +41,7 @@ const FGet = async (api) => // for get queries
         console.error("Error response:");
         console.error(err.response);    
     }
-    return inDt;   
+    return inDt.data;   
 }
 
 const FDelete = async (json, api) => //delete
@@ -44,4 +62,4 @@ const FUpdate = async (json, api) => //patch
     await api.patch(`/${json.id}`, {data:json})    // this one need id filed provided, we add id from WhatEverId field before coming here
 }
 
-export  {FGet, FDelete, FAdd, FUpdate}
+export  {FGet, FGetById, FDelete, FAdd, FUpdate}

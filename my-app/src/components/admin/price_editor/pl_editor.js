@@ -2,7 +2,7 @@ import React from 'react'
 import './pl_editor.css';
 import TitleChanger from '../../../functions/titlechanger'
 import api from '../../../api_list/api_price_list_axios' //load api connector fot this particular component
-
+import * as operations from '../../../api_list/api_price_list_operations'
 
 
 //material table and icons initialization begin
@@ -23,7 +23,7 @@ import SaveAlt from '@material-ui/icons/SaveAlt'
 import Search from '@material-ui/icons/Search'
 import ViewColumn from '@material-ui/icons/ViewColumn'
 import { forwardRef } from 'react'
-import * as operations from '../../../api_list/api_price_list_operations'
+
 
 //const operations = require('../../../api_list/api_price_list_operations')
 
@@ -51,6 +51,7 @@ const tableIcons = {
 
 const TITLE = 'Price list editor'; //TitleChanger(TITLE);
 
+/*
 const TableLine = props => //return table line prices
 {
     return (
@@ -82,7 +83,7 @@ const return_price_table = json => //return table with prices
         </div>
     )
 }
-
+*/
 
 
 class PlEditor extends React.Component {
@@ -94,8 +95,9 @@ class PlEditor extends React.Component {
   async componentDidMount()
   { 
       let inData = await operations.FGet(api) // using axios request api root (api url set up in import api from 'FILEPATH')
-      this.setState({data: inData.data}); // adding json from api to state
-      console.log(inData.data);
+      this.setState({data: inData}); // adding json from api to state
+      console.log("getpl");
+      console.log(inData);
   }
 
    render() {

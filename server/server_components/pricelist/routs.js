@@ -12,8 +12,8 @@ const commonFunc = require('../common/common'); //common functions, like check i
 const route_entry ='/pricelist' 
 
 //creating routs for get, add, modify and delete:
-router.get(route_entry, handlers.getPricelist);
-router.get(route_entry+'/:id', commonFunc.checkID, handlers.getPricelistById);
+router.get(route_entry, handlers.getAll);
+router.get(route_entry+'/:id', commonFunc.checkID, handlers.getById);
 router.post(route_entry, jsonParser, handlers.post); 
 router.patch(route_entry+'/:id', jsonParser, commonFunc.checkID, handlers.patchById)
 router.delete(route_entry+'/:id', commonFunc.checkID,  handlers.deleteById)

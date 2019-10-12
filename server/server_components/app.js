@@ -1,7 +1,8 @@
 const express = require('express');
 const app = express();
 const config = require('./config')
-const pricelist_routs = require('./pricelist/routs')
+const pricelistRouts = require('./pricelist/routs')
+const articleRouts = require('./articles/routs')
 const knexcfg = require('./knexfile')
 const knex = require('knex')(knexcfg);
 
@@ -16,7 +17,7 @@ const start = () => {
         next();
     });
 
-    app.use('/api', pricelist_routs);
+    app.use('/api', pricelistRouts,articleRouts);
 
     app.listen(config.APIServerPort, () => {
         console.log(`Server started on port ${config.APIServerPort}`);
