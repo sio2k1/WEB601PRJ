@@ -22,11 +22,11 @@ const Defaultpage = ({ children }) => {
     }
 
 
-    const DefaultLayoutRoute = ({component: Component, ...rest}) => {  
+    const DefaultLayoutRoute = ({component: Component, article, ...rest}) => {  
       return (  
           <Route {...rest} render={matchProps => (  
           <Defaultpage>  
-              <Component {...matchProps} />  
+              <Component article={article} {...matchProps} />  
           </Defaultpage>  
           )} />  
       )  

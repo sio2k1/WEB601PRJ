@@ -12,6 +12,10 @@ const return_article_content = (json) => { //parsing an article content to get p
       {
         return (<p key={i++} >{parag.paragraph}</p>)
       } else 
+      if (parag.h2 !== undefined) //if we have a h2 - output it
+      {
+        return (<h2 key={i++} >{parag.h2}</h2>)
+      } else 
       if (parag.img !== undefined) //if we have an image - output it
       {
         return (
