@@ -1,3 +1,6 @@
+/*
+  This is navigation container - building nav bar on top
+*/
 import React, {Component} from 'react';
 import './navigation.css';
 import { Link, NavLink } from "react-router-dom";
@@ -6,28 +9,34 @@ import {a_logoff} from '../login/redux_login_actions'
 
 class Navigation extends Component
 {
+  i=0;
   logoff = () => {this.props.dispatch(a_logoff())} //dispatching a logoff action
   
-  loginMenuAdmin = () => {
+  loginMenuAdmin = () => { // if user logged off -> not show Admin menu item
     if (this.props.user_id!==-1) {
-      return <li><NavLink to="/admin" activeClassName="navbar-active-link">Admin</NavLink></li> 
+      return <li key={this.i++}><NavLink to="/admin" activeClassName="navbar-active-link">Admin</NavLink></li> 
     }
   }
 
   loginMenuLogoff = () => { //show logoff button in menu
     if (this.props.user_id!==-1) {
-      return <li><Link to="/" onClick={this.logoff}>Logoff</Link></li>
+      return <li key={this.i++}><Link to="/" onClick={this.logoff}>Logoff</Link></li>
     }
   }
 
   loginUnlogged = () => { //show login button in menu, if we haven't login yet
     if (this.props.user_id===-1) {
-      return <li><NavLink to="/login" activeClassName="navbar-active-link">Login</NavLink></li>
+      return <li key={this.i++}><NavLink to="/login" activeClassName="navbar-active-link">Login</NavLink></li>
     }
   }
 
-  articleList = () => {
-    
+  articleList = () => { // articles from DB
+    const data = this.props.articles; // this comes from redux, set in routing.js in getArticleRouts()
+    let rts = []; //we returning an array to avoid parent tag
+    data.map((article)=> {
+          rts.push(<li key={this.i++}><NavLink to={article.ArticleMatchPath}  activeClassName="navbar-active-link">{article.ArticleTitle}</NavLink></li>)
+    })    
+    return rts; 
   }
 
   render() {
@@ -38,23 +47,23 @@ class Navigation extends Component
       <input className="menu-btn" type="checkbox" id="menu-btn" />
       <label className="menu-icon" htmlFor="menu-btn"><span className="navicon"></span></label>
       <ul className="menu">
-        <li><NavLink exact to="/" activeClassName="navbar-active-link">Home</NavLink></li>
-        <li><NavLink to="/about" activeClassName="navbar-active-link">About</NavLink></li>
-        <li><NavLink to="/price" activeClassName="navbar-active-link">Price</NavLink></li>
-        <li><NavLink to="/contacts" activeClassName="navbar-active-link">Contacts</NavLink></li>
+        <li key={this.i++}><NavLink exact to="/" activeClassName="navbar-active-link">Home</NavLink></li>
+        {this.articleList()} {/* Load nav bar items for dynamic articles */}
+        <li key={this.i++}><NavLink to="/price" activeClassName="navbar-active-link">Price</NavLink></li>
         {this.loginUnlogged() /*show login if you are un logged */}
         {this.loginMenuAdmin() /*show admin if you are logged */}
         {this.loginMenuLogoff() /*show logoff if you are logged */}
-        <li className="username">{user}</li> {/*show user name if you are logged */}
+        <li key={this.i++} className="username">{user}</li> {/*show user name if you are logged */}
       </ul> 
     </header>)
   }
 }
 
-function mapStateToProps(state) {
+function mapStateToProps(state) { // map state to props for redux
   return { 
     user_name: state.login_reducer.user_name ,
-    user_id:  state.login_reducer.user_id
+    user_id:  state.login_reducer.user_id,
+    articles: state.routing_navi_reducer.articles
   }
 }
 

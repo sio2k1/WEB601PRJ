@@ -1,3 +1,6 @@
+/*
+  Using this container for auth login box
+*/
 import React, {Component} from 'react';
 import {connect} from 'react-redux'; 
 import './login_box.css';
@@ -8,16 +11,16 @@ class LoginBox extends Component {
 
     login;
     pwd;
-    handleSubmit = (event) => {
+    handleSubmit = (event) => { // form submit handler, calling action to change store state if login and pwd are ok 
         event.preventDefault();
         this.props.dispatch(a_login(this.login.value,this.pwd.value));
     }
-    renderRedirect = () => {
+    renderRedirect = () => { //redirect to home after login successful
         if (this.props.user_id!==-1) {
           return <Redirect to='/' />
         }
       }
-    displayWrongLoginPass = () => {
+    displayWrongLoginPass = () => { //display info about incorrect credentials
         if (this.props.wrong_login_pwd===true) {
           return <div className="login-wrong">Incorrect login/password</div>
         }
@@ -39,17 +42,15 @@ class LoginBox extends Component {
               <input className="login-txt-inp" type="text" id="login" name="login"  ref={node => this.login = node} placeholder="Enter login..."/>
               <label className for="pwd">Password:</label>
               <input className="login-txt-inp" type="password" id="pwd" name="pwd" ref={node => this.pwd = node} placeholder="Enter password..."/>
-              
               <button className="login-btn" type="submit">Sing In</button>
           </form>
         </div>
         )
-    }
-    
+    }  
 }
 
-function mapStateToProps(state) {
+function mapStateToProps(state) { //redux mapping part
   return { user_id: state.login_reducer.user_id, wrong_login_pwd: state.login_reducer.wrong_login_pwd}
 }
   
-export default connect(mapStateToProps,)(LoginBox)
+export default connect(mapStateToProps)(LoginBox)
