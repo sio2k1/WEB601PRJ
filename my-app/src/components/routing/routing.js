@@ -8,7 +8,7 @@ import {Route, Switch} from 'react-router-dom'
 import AppLayout from '../app_layout/app_layout'
 import Login from '../login/login'
 import Home from '../home/home'
-import About from '../about/about'
+import Article from '../article/article'
 import Price from '../price/price'
 import {a_setArticles} from '../routing/redux_routingnavi_actions'
 //import Contacts from '../contacts/contacts'
@@ -30,7 +30,7 @@ class Routing extends React.Component{
   i;
   constructor(props) {
     super(props);
-    this.state = {data:[], isFetching:false} //set default value as abject with empty arrays
+    this.state = {data:[], isFetching:false, show404:false} //set default value as abject with empty arrays
     this.i=0;
   }
   async componentDidMount() // load article data on mount
@@ -38,6 +38,11 @@ class Routing extends React.Component{
     this.setState({...this.state, isFetching: true});
     const inData = await operations.FGet(api) // using axios request api root (api url set up in import api from 'FILEPATH')
     this.setState({data: inData, isFetching: false});
+
+    setTimeout(() => { // i experience 404 page blinking while app loading, so i delay its rout for 300ms
+      this.setState({show404: true});
+    }, 300);
+
   }
   
   
@@ -48,15 +53,18 @@ class Routing extends React.Component{
     if (!data.isFetching) // enable this routs on fetching complete
     {
       this.props.dispatch(a_setArticles(data)); // saving articles data in store, so we can use them later in navigation bar
-      let rts = []; //we returning an array to avoid parent tag, which screws react router and stop switch
-      data.map((article)=> {
-        rts.push(<DefaultLayoutRoute key={this.i++} path={article.ArticleMatchPath} component={About} article={article}/>)
+      let result = []; //we returning an array to avoid parent tag, which screws react router and stop switch
+      data.forEach((article)=> {
+        result.push(<DefaultLayoutRoute key={this.i++} path={article.ArticleMatchPath} component={Article} article={article}/>)
       })    
-      return rts;  
+      return result;  
     }  
   }
-  render(){
 
+  //page404IfNotFetching
+
+  render(){
+    
     return (
       <AppLayout>
         <Switch>  
@@ -70,7 +78,12 @@ class Routing extends React.Component{
 
           <DefaultLayoutRoute key={this.i++} path='/price' component={Price} />
           {this.getArticleRouts() /* call function which builds dynamic routes */}
-          <DefaultLayoutRoute key={this.i++} component={NotFound} status={404} />
+          
+          {this.state.show404 ? (<DefaultLayoutRoute key={this.i++} component={NotFound} status={404} />) : (null)}
+        
+       
+          
+          
         </Switch>
       </AppLayout>
     )  

@@ -32,11 +32,11 @@ class Navigation extends Component
 
   articleList = () => { // articles from DB
     const data = this.props.articles; // this comes from redux, set in routing.js in getArticleRouts()
-    let rts = []; //we returning an array to avoid parent tag
-    data.map((article)=> {
-          rts.push(<li key={this.i++}><NavLink to={article.ArticleMatchPath}  activeClassName="navbar-active-link">{article.ArticleTitle}</NavLink></li>)
+    let result = []; //we returning an array to avoid parent tag
+    data.forEach((article)=> {
+      result.push(<li key={this.i++}><NavLink to={article.ArticleMatchPath}  activeClassName="navbar-active-link">{article.ArticleTitle}</NavLink></li>)
     })    
-    return rts; 
+    return result; 
   }
 
   render() {

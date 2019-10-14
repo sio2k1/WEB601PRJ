@@ -4,11 +4,11 @@ we use /article/:id api to get article
 */
 import React from 'react'
 import TitleChanger from '../../functions/titlechanger'
-import './about.css';
+import './article.css';
 import json_parser from '../common/page_json_parser.js' // this will parce json to jsx
 import api from '../../api_list/api_articles_axios' //load api connector fot this particular component
 import * as operations from '../../api_list/api_price_list_operations' // component with api calls for get\post\put\delete
-class About extends React.Component { //init state
+class Article extends React.Component { //init state
   
   constructor(props) {
     super(props);
@@ -66,7 +66,7 @@ class About extends React.Component { //init state
     }
 }
 }
-export default About;
+export default Article;
 
 
 /*
