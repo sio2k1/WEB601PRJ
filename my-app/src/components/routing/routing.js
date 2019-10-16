@@ -19,7 +19,7 @@ import DefaultLayoutRoute from '../defaultpage/defaultpage' // pages with defaul
 import NotFound from '../defaultpage/404' //component for 404 page not found
 
 import api from '../../api_list/api_articles_axios' //load api connector for this particular component
-import * as operations from '../../api_list/api_price_list_operations' // component with api calls for get\post\put\delete
+import * as operations from '../../api_list/api_operations' // component with api calls for get\post\put\delete
 
 
 
@@ -28,16 +28,16 @@ import * as operations from '../../api_list/api_price_list_operations' // compon
 
 class Routing extends React.Component{
   i;
-  constructor(props) {
+  constructor(props) { // initialization
     super(props);
     this.state = {data:[], isFetching:false, show404:false} //set default value as abject with empty arrays
-    this.i=0;
+    this.i=0; // this i we use to create keys for routes
   }
   async componentDidMount() // load article data on mount
   {
-    this.setState({...this.state, isFetching: true});
+    this.setState({...this.state, isFetching: true}); // start of fetching
     const inData = await operations.FGet(api) // using axios request api root (api url set up in import api from 'FILEPATH')
-    this.setState({data: inData, isFetching: false});
+    this.setState({data: inData, isFetching: false}); // end of fetching after await
 
     setTimeout(() => { // i experience 404 page blinking while app loading, so i delay its rout for 300ms
       this.setState({show404: true});
@@ -46,7 +46,7 @@ class Routing extends React.Component{
   }
   
   
-  getArticleRouts = () => // this one is returning routs to articles
+  getArticleRouts = () => // this one is returning routs to articles according to articles from DB
   {
     const {data} = this.state;
     //data.map ((article)=>{console.log(article)})    
@@ -61,7 +61,6 @@ class Routing extends React.Component{
     }  
   }
 
-  //page404IfNotFetching
 
   render(){
     
@@ -78,12 +77,7 @@ class Routing extends React.Component{
 
           <DefaultLayoutRoute key={this.i++} path='/price' component={Price} />
           {this.getArticleRouts() /* call function which builds dynamic routes */}
-          
           {this.state.show404 ? (<DefaultLayoutRoute key={this.i++} component={NotFound} status={404} />) : (null)}
-        
-       
-          
-          
         </Switch>
       </AppLayout>
     )  
@@ -136,4 +130,5 @@ function mapStateToProps(state) {
 
 export default connect(mapStateToProps)(Routing)
 */
+
 

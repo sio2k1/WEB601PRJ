@@ -1,3 +1,6 @@
+/* 
+We use this container to handle routes for authentication and display admin-panel layout for pages.
+*/
 import React from 'react'
 import './admin_layout.css';
 import TitleChanger from '../../functions/titlechanger'
@@ -6,8 +9,7 @@ import {connect} from 'react-redux';
 
 const TITLE = 'Admin Page'; //TitleChanger(TITLE);
 
-
-const AdminLayout = ({children}) => {  
+const AdminLayout = ({children}) => {  // layout statless component combining menu and {children}
   TitleChanger(TITLE);  
   return (
       <div className="admin-content-bg">
@@ -19,7 +21,7 @@ const AdminLayout = ({children}) => {
                 <li><NavLink exact to="/admin/user-editor" >User Editor</NavLink></li>
             </ul>
             </div>
-            <div className="admin-content">{children}</div>
+                <div className="admin-content">{children}</div>
             </div>
         </div>
       </div>
@@ -27,10 +29,10 @@ const AdminLayout = ({children}) => {
 }
 
 
-class AdminLayoutRoute extends React.Component {
+class AdminLayoutRoute extends React.Component { // user defined react router route component, which allows to have different layout to admin panel pages
     render() {
-        const { component: Component, ...rest } = this.props;
-        if (this.props.user_id!==-1)
+        const { component: Component, ...rest } = this.props; // get component and rest props
+        if (this.props.user_id!==-1) // check if user is logged in
         {
             return (   
                 <Route {...rest} render={matchProps => (    
@@ -38,17 +40,17 @@ class AdminLayoutRoute extends React.Component {
                     <Component {...matchProps} />  
                 </AdminLayout>  
             )} />)
-        } else
+        } else // if not logged in -> redirect to login page
         {
             return (<Redirect to='/login' />)
         }
     }
 }
 
-function mapStateToProps(state) {
+function mapStateToProps(state) { // redux subscription
     return { user_id: state.login_reducer.user_id }
 }
     
-export default connect(mapStateToProps)(AdminLayoutRoute)
+export default connect(mapStateToProps)(AdminLayoutRoute) // container creating
 
 //export default AdminLayoutRoute;

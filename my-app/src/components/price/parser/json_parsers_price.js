@@ -1,6 +1,10 @@
+/*
+    We use this to parse json with prices into table content
+*/
+
 import React from 'react'
 
-const TableLine = props => //return table line prices
+const TableLine = (props) => //return table line prices
 {
     return (
         <tr>
@@ -21,25 +25,27 @@ const return_price_table = json => //return table with prices
 {
     return (
         <div className="price-table-centerer">
-            <table><tbody>
-            {
-                json.map((line) => 
-                    <TableLine key={line.id} line={line} />
-                )
-            }
-            </tbody></table>
+            <table>
+                <tbody>
+                    {
+                        json.map((line) => 
+                            <TableLine key={line.id} line={line} />
+                        )
+                    }
+                </tbody>
+            </table>
         </div>
     )
 }
 
-const json_parser = (json) => {
+const json_parser = (json) => { //
     return (
       <div>
         <div className="text-box">
             {return_price_table(json)}
         </div> 
       </div>
-      )
-    }
+    )
+}
     
 export default json_parser;

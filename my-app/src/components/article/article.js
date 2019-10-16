@@ -7,7 +7,7 @@ import TitleChanger from '../../functions/titlechanger'
 import './article.css';
 import json_parser from '../common/page_json_parser.js' // this will parce json to jsx
 import api from '../../api_list/api_articles_axios' //load api connector fot this particular component
-import * as operations from '../../api_list/api_price_list_operations' // component with api calls for get\post\put\delete
+import * as operations from '../../api_list/api_operations' // component with api calls for get\post\put\delete
 class Article extends React.Component { //init state
   
   constructor(props) {

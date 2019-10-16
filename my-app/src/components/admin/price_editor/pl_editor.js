@@ -1,8 +1,13 @@
+/*
+  we are using this component to modify price list, mainly with MaterialTable
+  we specify material table events for row delete\insert\update and call corresponding api methods.
+*/
+
 import React from 'react'
 import './pl_editor.css';
 import TitleChanger from '../../../functions/titlechanger'
 import api from '../../../api_list/api_price_list_axios' //load api connector fot this particular component
-import * as operations from '../../../api_list/api_price_list_operations'
+import * as operations from '../../../api_list/api_operations' // get operations (get/post/put/patch)
 
 
 //material table and icons initialization begin
@@ -25,8 +30,8 @@ import ViewColumn from '@material-ui/icons/ViewColumn'
 import { forwardRef } from 'react'
 
 
-//const operations = require('../../../api_list/api_price_list_operations')
 
+// we have to get icons, according to material table dicumentation
 const tableIcons = {
   Add: forwardRef((props, ref) => <AddBox {...props} ref={ref} />),
   Check: forwardRef((props, ref) => <Check {...props} ref={ref} />),
@@ -49,130 +54,85 @@ const tableIcons = {
 //material table and icons initialization end
 
 
-const TITLE = 'Price list editor'; //TitleChanger(TITLE);
-
-/*
-const TableLine = props => //return table line prices
-{
-    return (
-        <tr>
-            <td>
-                <p>{props.line.item_name}</p>
-            </td>
-            <td>
-                <p>{props.line.price} </p>
-            </td>
-            <td>
-                <p>{props.line.units} </p>
-            </td>
-        </tr>
-    )
-}
-
-const return_price_table = json => //return table with prices
-{
-    return (
-        <div className="price-edit-holder">
-            <table><tbody>
-            {
-                json.map((line) => 
-                    <TableLine key={line.id} line={line} />
-                )
-            }
-            </tbody></table>
-        </div>
-    )
-}
-*/
+const TITLE = 'Price list editor'; //for TitleChanger(TITLE);
 
 
 class PlEditor extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {data:[]} //set default value as empty array
+    this.state = {data:[], isFetching: true} //set default value as empty array
   }
 
+  // when component mount
   async componentDidMount()
   { 
-      let inData = await operations.FGet(api) // using axios request api root (api url set up in import api from 'FILEPATH')
-      this.setState({data: inData}); // adding json from api to state
-      console.log("getpl");
-      console.log(inData);
+    this.setState({...this.state, isFetching: true}); // we r fetching, handle this in render()
+    const inData = await operations.FGet(api) // using axios request api root (api url set up in import api from 'FILEPATH')
+    this.setState({data: inData, isFetching: false});  // adding json from api to state  
   }
 
-   render() {
-    
+   render() { 
     TitleChanger(TITLE); //rendering title
+    if (!this.state.isFetching) // if we r not fetching - > display data
+    {
+      return (
+        <div className="price-edit-holder">
+          <MaterialTable 
+            columns={[ // define material table columns
+             
+              { title: 'Caption', field: 'SalesItemName' }, 
+              { title: 'Price', field: 'Price', type: 'numeric' },
+              { title: 'Units', field: 'SalesItemUnits'  }
+              
+            ]}
+            data={this.state.data} //set data source for material table
+            title="Price list editor"  // table title
+            icons={tableIcons} // set icons
+            editable={{
+              onRowAdd: newData => // this occurs when we insert new row
+                new Promise( resolve =>  {
+                  setTimeout(async () => { // w8 800ms
+                    resolve();
+                    const data = [...this.state.data];
+                    newData= await operations.FAdd(newData, api); // we need to receive inserted id to fill the table with actual db value
+                    data.push(newData); // add this to state.data
+                    this.setState({ ...this.state, data });
+                  }, 800);
+                }),
+              onRowUpdate: (newData, oldData) => // this happens on row is modified
+                new Promise(resolve => {
+                  setTimeout(() => { // timout
+                    resolve();
+                    const data = [...this.state.data];
+                    data[data.indexOf(oldData)] = newData; // get updatet row object
+                    operations.FUpdate( Object.assign(newData, {id:newData.PriceListId}) ,api); // send to api
+                    
+                    this.setState({ ...this.state, data }); // update state with updated row object
+                  }, 600);
+                }),
+              onRowDelete: oldData => // this happens on row delete
+                new Promise(resolve => {
+                  setTimeout(() => { // timeout for operation
+                    resolve();
+                    const data = [...this.state.data];
+                    //oldData.id=oldData.PriceListId;
+                    operations.FDelete( Object.assign(oldData, {id:oldData.PriceListId}), api); // call delete api method
+                    data.splice(data.indexOf(oldData), 1); // remove row from state
+                    this.setState({ ...this.state, data });
+                  }, 600);
+                }),
+            }}
   
-     //parsing json to jsx in return
-    return (
-      <div className="price-edit-holder">
-        <MaterialTable 
-          columns={[
-           
-            { title: 'Caption', field: 'SalesItemName' },
-            { title: 'Price', field: 'Price', type: 'numeric' },
-            { title: 'Units', field: 'SalesItemUnits'  }
-            
-          ]}
-          data={this.state.data}
-          title="Price list editor" 
-          icons={tableIcons}
-          editable={{
-            onRowAdd: newData =>
-              new Promise( resolve =>  {
-                setTimeout(async () => {
-                  resolve();
-                  const data = [...this.state.data];
-                  newData= await operations.FAdd(newData, api); // we need to receive inserted id to fill the table with actual db value
-                  data.push(newData);
-                  
-                  this.setState({ ...this.state, data });
-                }, 800);
-              }),
-            onRowUpdate: (newData, oldData) =>
-              new Promise(resolve => {
-                setTimeout(() => {
-                  resolve();
-                  const data = [...this.state.data];
-                  data[data.indexOf(oldData)] = newData;
-                  //newData.id=newData.PriceListId;
-                  //operations.FUpdate(newData,api);
-                  operations.FUpdate( Object.assign(newData, {id:newData.PriceListId}) ,api);
-                  
-                  this.setState({ ...this.state, data });
-                }, 600);
-              }),
-            onRowDelete: oldData =>
-              new Promise(resolve => {
-                setTimeout(() => {
-                  resolve();
-                  const data = [...this.state.data];
-                  //oldData.id=oldData.PriceListId;
-                  operations.FDelete( Object.assign(oldData, {id:oldData.PriceListId}), api);
-                  data.splice(data.indexOf(oldData), 1);
-                  this.setState({ ...this.state, data });
-                }, 600);
-              }),
-          }}
+          />
+        </div>
+      )
+    } else // display loading if we r still fetching
+    {
+      return (<div>Loading...</div>)
+    }
 
-        />
-      </div>
-    )
+     //parsing json to jsx in return
+    
   }
 }
-//icons={tableIcons}
-//{json_parser(this.state)} 
 export default PlEditor;
-
-/*
-
-const PlEditor = () => {  
-  TitleChanger(TITLE);  
-
-  return (
-      <div>editor</div>
-  )
-}
-export default PlEditor;
-*/

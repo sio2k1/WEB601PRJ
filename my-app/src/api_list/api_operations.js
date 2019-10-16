@@ -1,4 +1,4 @@
-//this file is for generali inserting\updating and deleting anything
+//this file is for general inserting\updating and deleting anything
 //incoming json object should contain 'id' field for delete and update
 // api is a link to axios: 
 /*
@@ -47,7 +47,7 @@ const FGet = async (api) => // for get queries
 const FDelete = async (json, api) => //delete
 {
     //console.log(json);
-    await api.delete(`/${json.id}`)    // this one need id filed provided, we add id from WhatEverId field before coming here
+    await api.delete(`/${json.id}`)    // this one need id field provided, we add id from WhatEverId field before coming here
 }
 
 const FAdd = async (json, api) => // this function returns inserted object from db with actual id
@@ -59,7 +59,7 @@ const FAdd = async (json, api) => // this function returns inserted object from 
 const FUpdate = async (json, api) => //patch
 {
     //console.log(json);
-    await api.patch(`/${json.id}`, {data:json})    // this one need id filed provided, we add id from WhatEverId field before coming here
+    await api.patch(`/${json.id}`, {data:json})    // this one need id field provided, we add id from WhatEverId field before coming here
 }
 
 export  {FGet, FGetById, FDelete, FAdd, FUpdate}
