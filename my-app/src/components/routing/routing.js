@@ -85,6 +85,6 @@ function mapStateToProps(state) { // map articles from store
   return { articles: state.routing_navi_reducer.articles }
 }
 
-export default connect(mapStateToProps)(Routing) // connect for redux
+export default connect(mapStateToProps)(Routing) // connect to redux store
 
 

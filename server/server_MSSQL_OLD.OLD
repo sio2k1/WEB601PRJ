@@ -1,3 +1,6 @@
+/* This file is not part of a project, follow to entry.js to start app */
+
+
 const about_data = require('./about_content.json');
 
 
