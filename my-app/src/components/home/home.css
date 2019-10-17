@@ -32,4 +32,11 @@
   -webkit-filter: blur(0.5px) brightness(1);
           filter: blur(0.5px) brightness(1);
 }
+
+@media only screen and (max-width: 400px) {
+  .logo-img {
+    width: calc( 733px / 2.7);
+    height: calc( 543px / 2.7);
+  }
+}
 /*# sourceMappingURL=home.css.map */

@@ -62,8 +62,10 @@
 }
 
 @media only screen and (max-width: 768px) {
+    
     .admin-wrapper-grid
     {  
+        //width: 98vw;
         grid-template-columns: unset;
         grid-template-rows: auto auto;
     }
@@ -76,6 +78,16 @@
         grid-row: 2;
     }
 }
+
+@media only screen and (max-width: 500px) {
+    .admin-wrapper-grid
+    {  
+        width: 98vw;
+        
+    }
+ 
+}
+   
 
 
 

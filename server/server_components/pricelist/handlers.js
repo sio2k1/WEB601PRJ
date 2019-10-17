@@ -135,7 +135,7 @@ const patchById = async (req, res) =>{
         if (found) // modify existing record
         {
             const payload = req.body.data // gathering json from request body
-            console.log(payload);
+            console.log(req.body);
             for (let key in payload) { //for each key in payload perform update to db
                 let ele=payload[key];
                 if (key.toLowerCase()=="SalesItemName".toLowerCase())

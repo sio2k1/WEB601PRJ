@@ -86,8 +86,9 @@ class PlEditor extends React.Component {
               
             ]}
             data={this.state.data} //set data source for material table
-            title="Price list editor"  // table title
+            title="Price list"  // table title
             icons={tableIcons} // set icons
+            //options={{ paging: false, search:false }}
             editable={{
               onRowAdd: newData => // this occurs when we insert new row
                 new Promise( resolve =>  {

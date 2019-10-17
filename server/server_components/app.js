@@ -19,7 +19,7 @@ const start = () => {
 
     app.use('/api', pricelistRouts,articleRouts);
 
-    app.listen(config.APIServerPort, () => {
+    app.listen(config.APIServerPort, "0.0.0.0",  () => {
         console.log(`Server started on port ${config.APIServerPort}`);
     });
 }
