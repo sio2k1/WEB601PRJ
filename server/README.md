@@ -5,6 +5,7 @@
 
 # Configuration
 To set up Api port, edit: \server\server_components\config.js
+
 To setup SQLite db connection, edit: \server\server_components\knexfile.js
 
 # Entry point
