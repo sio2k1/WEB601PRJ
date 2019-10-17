@@ -1,21 +1,21 @@
-
+ // this is handlers we use to handle routes for price list
+  
  
  
- const getAll =  (req, res) =>{ 
-   const { knex } = req.app.locals
+ const getAll =  (req, res) =>{  // for get request -> get all items
+   const { knex } = req.app.locals // get ref to knex
     knex
-    //.select('PriceListId as id','SalesItemName as item_name', 'Price as price', 'SalesItemUnits as units')
     .select('PriceListId','SalesItemName', 'Price', 'SalesItemUnits')
     .from('PriceList')
     .leftJoin('SalesItems', 'PriceList.SalesItemId', 'SalesItems.SalesItemId')
     /*We going to use a promise based lib */
     .then(data =>  res.status(200).json(data))
-    .catch(error => res.status(500).json(error))
+    .catch(error => res.status(500).json(error)) // error handling
     
 }
 
-const getById = (req, res) =>{
-    const { knex } = req.app.locals;
+const getById = (req, res) =>{// for get request with id -> get specified items
+    const { knex } = req.app.locals; // get ref to knex
     const { id } = req.params;
     knex
         .select('PriceListId','SalesItemName', 'Price', 'SalesItemUnits')
@@ -26,19 +26,19 @@ const getById = (req, res) =>{
         })
         /*We going to use a promise based lib */
         .then(data => {
-            if (data.length > 0) {
+            if (data.length > 0) { // if we have data in db return it else return NOT EXISTS
                 return res.status(200).json(data)
             } else {
                 return res.status(404).json(`Employee with ID ${id} do not exist`);
             }
         })
-        .catch(error => res.status(500).json(error))
+        .catch(error => res.status(500).json(error)) // error handling
    
 }
 
 const insertSelectSalesItem = async (salesItem, req, res) => //insert or select existing sales_items_id
 {
-    const { knex } = req.app.locals
+    const { knex } = req.app.locals // get ref to knex
     let salesItemsId=-1;
     await knex.select('*').from('SalesItems') //searching for existing salesItemsID
     .where(salesItem)
@@ -46,7 +46,7 @@ const insertSelectSalesItem = async (salesItem, req, res) => //insert or select 
         (rows) => {
             if (rows.length>0)
             {
-                salesItemsId=rows[0]['SalesItemID'];
+                salesItemsId=rows[0]['SalesItemID']; // actual id in array at element 0
             }
     })
     .catch(error => res.status(500).json(error))
@@ -65,7 +65,7 @@ const insertSelectSalesItem = async (salesItem, req, res) => //insert or select 
    
 }
 
-const post = async (req, res) =>{
+const post = async (req, res) =>{ // use this to add items in db
    
     const { knex } = req.app.locals // calling knex
     const payload = req.body.data // gathering json from request body
@@ -74,9 +74,9 @@ const post = async (req, res) =>{
     const payloadKeys = Object.keys(payload) //checking keys in payload
     const mandatoryColumnsExists = mandatoryColumns.every(mc => payloadKeys.includes(mc)) // if all mandatory fields included return true
     //console.log(payload);
-    if (mandatoryColumnsExists) {
+    if (mandatoryColumnsExists) { // checking required fields
 
-        let salesItemsId = await insertSelectSalesItem({
+        let salesItemsId = await insertSelectSalesItem({ // call insertSelectSalesItem get id from salesitems table
             SalesItemName: `${payload.SalesItemName}`,
             SalesItemUnits: `${payload.SalesItemUnits}`
         }, req, res);
@@ -86,12 +86,12 @@ const post = async (req, res) =>{
             price: payload.Price,
             SalesItemID: salesItemsId
         }
-        let insertedid=-1;
+        let insertedid=-1; // id holder
         await knex.insert(newPriceListItem).into('PriceList').returning("SalesItemID").then(function (id) {
             insertedid = id[0]; // id is returned as array, so we need to extract element 0
         }).catch(error => res.status(500).json(error));
 
-        await knex
+        await knex //we will return MutationRecord, that we just inserted
         .select('PriceListId','SalesItemName', 'Price', 'SalesItemUnits')
         .from('PriceList')
         .leftJoin('SalesItems', 'PriceList.SalesItemId', 'SalesItems.SalesItemId')
@@ -109,10 +109,10 @@ const post = async (req, res) =>{
 }
 
 
-const patchById = async (req, res) =>{
+const patchById = async (req, res) =>{ // update existing record
     
-    const { knex } = req.app.locals;
-    const { id } = req.params;
+    const { knex } = req.app.locals; // get ref to knex
+    const { id } = req.params; // target record id
     let salesItemsId=-1;
     let found =  true;
    
@@ -160,12 +160,12 @@ const patchById = async (req, res) =>{
         //return res.status(400).send(`Item not found: ${id}`);
 }
 
-const deleteById = async (req, res) =>{
-    const { knex } = req.app.locals;
-    const { id } = req.params;
-    let salesItemsId=-1;
+const deleteById = async (req, res) =>{ // delete target record
+    const { knex } = req.app.locals; // get ref to knex
+    const { id } = req.params; // get id from request params
+    let salesItemsId=-1; // items id holder (we need to delete rows in 2 joined tables)
 
-    let found =  true;
+    let found =  true; // holder for condition if we found record or not
     
     await knex // look for record in its exists -> continue
         .select('*')
@@ -183,8 +183,8 @@ const deleteById = async (req, res) =>{
         .catch(error => res.status(500).json(error))
     if (found) // modify existing record
     {
-        await knex('SalesItems').where({ salesItemID: salesItemsId }).del();  
-        await knex('PriceList').where({ PriceListId: id }).del();
+        await knex('SalesItems').where({ salesItemID: salesItemsId }).del();  //actual delete
+        await knex('PriceList').where({ PriceListId: id }).del();//actual delete
         return res.status(200).send("OK");
     } else
     {
