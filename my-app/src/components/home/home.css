@@ -1,3 +1,7 @@
+/* Home page styling
+Defines background styling, positioning and logo location
+*/
+/* common css variables */
 .home-grid {
   display: -ms-grid;
   display: grid;
@@ -6,7 +10,7 @@
   grid-gap: 0px;
 }
 
-.row-logo {
+.row-bg {
   -ms-grid-row: 1;
   grid-row: 1;
   display: -webkit-box;

@@ -1,24 +1,16 @@
-@import '../common/cssvars.scss';
+/* Login page layout styling*/
+@import '../common/cssvars.scss'; // load common css vars
+ 
 
 
-.fonts-big-title
-{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 50px;
-    color: white;
-    text-align: center;
-}
-
-.grid-wrapper{
+.grid-wrapper{ // grid for login page
     display: grid;
     grid-template-rows:  20vh 10vh auto;
     height:  calc(100vh - #{$header_h});
     grid-gap: 0px;
     padding: 0px;
     margin: 0px;
-    //background-image: url('../../images/f3.png');
-    background: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),
-    url(../../images/f3.png);
+    background: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(../../images/f3.png); //shaded background
     background-size: cover;
 }
 .top-row{
@@ -29,7 +21,7 @@
     grid-row: 2;
 }
 
-.login-row{
+.login-row{ // row with login box
     display: flex;
     justify-content: center;
     grid-row: 3; 

@@ -1,4 +1,5 @@
-.login-box{
+/*Styles for login box*/
+.login-box{ // login box container
     height: 230px; 
     width: 400px; 
     padding: 10px;
@@ -9,7 +10,7 @@
 }
 
 
-.login-txt-inp {
+.login-txt-inp { // text input in login box
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -19,7 +20,7 @@
   box-sizing: border-box;
 }
   
-.login-btn {
+.login-btn { // button to send login\pwd
   width: 100%;
   background-color: #285B28;
   color: white;
@@ -30,11 +31,11 @@
   cursor: pointer;
 }
   
-.login-btn:hover {
+.login-btn:hover { // button hover styles
   background-color: #9396b3;
 }
 
-.login-wrong {
+.login-wrong { // Incorrect creds message styling
   color: red;
   //display: inline;
   align-self: flex-end;
@@ -42,15 +43,16 @@
   width: 200px;
 }
 
-.login-label-wrapper
-{
+.login-label-wrapper{ // labels in login box
   display: grid;
   grid-template-columns: 50% 50%;
 }
   
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 400px) { // resizing login box for smaller screens
   .login-box{
-    
     width: 270px; 
+  }
+  .login-label-wrapper{ // labels in login box
+    grid-template-columns: 30% 70%;
   }
 }

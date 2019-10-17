@@ -1,21 +1,16 @@
+/*Reducers for articles in navigation bar and for getting access to articles from corresponding components*/
 import * as act from './redux_routingnavi_actions'
 
-
-const action_login = (state, action) =>
+const action_set_articles = (state, action) => // set articles in store
 {
-
-    return Object.assign({}, state, 
-      {
-        articles:action.articles
-      })
-  
+    return {...state, articles:action.articles} // return new state as it is pure function
 }
 
-let initialState = {articles:[]};
+let initialState = {articles:[]}; // init state with emty array of articles
 const routing_navi_reducer = (state=initialState, action) => {
   if (action.type===act.SETARTICLES) 
   {
-    return action_login(state,action);
+    return action_set_articles(state,action); // call set articles if got corresponding action
   } 
   else 
   {

@@ -63,7 +63,7 @@ class PlEditor extends React.Component {
     this.state = {data:[], isFetching: true} //set default value as empty array
   }
 
-  // when component mount
+  // when component fully loaded
   async componentDidMount()
   { 
     this.setState({...this.state, isFetching: true}); // we r fetching, handle this in render()
@@ -132,7 +132,7 @@ class PlEditor extends React.Component {
       return (<div>Loading...</div>)
     }
 
-     //parsing json to jsx in return
+     
     
   }
 }

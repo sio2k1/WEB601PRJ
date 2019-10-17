@@ -9,7 +9,7 @@ import { Redirect } from 'react-router-dom'
 
 class LoginBox extends Component {
 
-    login;
+    login; // define login and pwd holders
     pwd;
     handleSubmit = (event) => { // form submit handler, calling action to change store state if login and pwd are ok 
         event.preventDefault();
@@ -36,7 +36,7 @@ class LoginBox extends Component {
               <label for="login">
                 <div className="login-label-wrapper">
                 <div>Login:</div>
-                <div>{this.displayWrongLoginPass()}</div>  
+                <div>{this.displayWrongLoginPass() /* display wrong login\pwd text on wrong creds entered */}</div>  
               </div>
               </label>
               <input className="login-txt-inp" type="text" id="login" name="login"  ref={node => this.login = node} placeholder="Enter login..."/>
@@ -53,4 +53,4 @@ function mapStateToProps(state) { //redux mapping part
   return { user_id: state.login_reducer.user_id, wrong_login_pwd: state.login_reducer.wrong_login_pwd}
 }
   
-export default connect(mapStateToProps)(LoginBox)
+export default connect(mapStateToProps)(LoginBox) //redux connecting

@@ -1,7 +1,6 @@
+/* component for 404 not found page */
 import React from 'react'
 import './404.css';
-
-
 
 const NotFound = () => { 
     return (

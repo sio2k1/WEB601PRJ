@@ -23,7 +23,6 @@
   grid-gap: 10px;
 }
 
-/* 48em = 768px */
 .admin-menu {
   -ms-grid-column: 1;
   grid-column: 1;

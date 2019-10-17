@@ -1,3 +1,5 @@
+/* styles for default layout*/
+/* common css variables */
 .default-page-content {
   margin-top: 5vh;
   min-height: calc(82vh - 5vh - 48px);
@@ -9,16 +11,4 @@
   background-size: cover;
   background-image: url(../../images/footer2_smaller.png);
 }
-
-/* 
-.row-article{
-    grid-row: 2;
-}
-
-:target::before {
-    content: "";
-    display: block;
-    height: 46px; 
-    margin: -46px 0 0; 
-  }*/
 /*# sourceMappingURL=defaultpage.css.map */

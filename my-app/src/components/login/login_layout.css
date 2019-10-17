@@ -1,10 +1,5 @@
-.fonts-big-title {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 50px;
-  color: white;
-  text-align: center;
-}
-
+/* Login page layout styling*/
+/* common css variables */
 .grid-wrapper {
   display: -ms-grid;
   display: grid;

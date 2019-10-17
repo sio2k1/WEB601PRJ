@@ -1,7 +1,9 @@
+// this component is parsing article json into page contents
+
 import React from 'react'
 import './page_json_parser.css';
-import './flipcards.css';
-import './article.css';
+import '../../common/flipcards.css';
+import '../article.css';
 
 const return_article_content = (json) => { //parsing an article content to get parag. and img from json
   let i=0;
@@ -20,7 +22,7 @@ const return_article_content = (json) => { //parsing an article content to get p
       {
         return (
         <div key={i++} className="page-json-parser-img-article-container">
-          <img className="page-json-parser-img-article" src={require('../../images/'+parag.img)} alt={parag.alt} />
+          <img className="page-json-parser-img-article" src={require('../../../images/'+parag.img)} alt={parag.alt} />
         </div>
         )
       } else
@@ -45,7 +47,7 @@ const return_pic_grid = (json) => { //parsing header and footer
           <div className="flip-card">
             <div className="flip-card-inner">
               <div className="flip-card-front">
-                <img className="page-json-parser-t-img-auto" src={require('../../images/'+pic.src)} alt={pic.alt} />
+                <img className="page-json-parser-t-img-auto" src={require('../../../images/'+pic.src)} alt={pic.alt} />
               </div>
               <div className="flip-card-back">
                 <p>{pic.flipcardtext}</p> 
@@ -59,7 +61,7 @@ const return_pic_grid = (json) => { //parsing header and footer
     { // just return image
       return  (
         <div className="page-json-parser-td-pic">
-          <img className="page-json-parser-t-img-auto" src={require('../../images/'+pic.src)} alt={pic.alt} />
+          <img className="page-json-parser-t-img-auto" src={require('../../../images/'+pic.src)} alt={pic.alt} />
         </div> 
       )
     }
@@ -91,9 +93,6 @@ const return_pic_grid = (json) => { //parsing header and footer
 }
 
 const json_parser = (json) => { //parsing incoming json here to JSX
-
-
-  
     return (
       <div className="text-box">
         {return_pic_grid(json.header_pic)}

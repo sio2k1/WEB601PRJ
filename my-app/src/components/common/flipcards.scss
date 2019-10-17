@@ -1,4 +1,4 @@
- /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+ /* The flip card container*/
  /* Styles retrieved from https://www.w3schools.com/howto/howto_css_flip_card.asp */
  .flip-card {
   z-index: 0;
@@ -8,7 +8,7 @@
   //perspective: 1000px; /* Remove this if you don't want the 3D effect */
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1024px) { /* responsive design for flip cards*/
   .flip-card
   {
       width: 150px;
@@ -16,7 +16,7 @@
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 768px) { /* responsive design for flip cards*/
   .flip-card 
   {
       width: 100px;

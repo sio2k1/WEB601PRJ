@@ -67,7 +67,7 @@ function mapStateToProps(state) { // map state to props for redux
   }
 }
 
-export default connect(mapStateToProps)(Navigation)
+export default connect(mapStateToProps)(Navigation) // redux connecting
 
 
 

@@ -1,25 +1,14 @@
+/* styles for default layout*/
 @import '../common/cssvars.scss';
-// .default-page-grid
-// {
-//     // display: grid;
-//     // grid-template-rows: calc(82vh - 46px) 18vh;
-//     // grid-gap: 0px;
-// }
 
-// .default-page-content
-// {
-//     //grid-row: 1;
-
-// }
-.default-page-content
+.default-page-content // page content position styling
 {
     margin-top: $article_margin_top; 
     min-height: calc(#{$article_h} - #{$article_margin_top} - #{$header_h});
 }
 
-.default-page-footer{
-    //grid-row: 2;
-
+.default-page-footer // footer styling
+{
     width: 100%;
     height: $footer_h;
     background-size: cover;
@@ -27,14 +16,3 @@
 } 
 
 
-/* 
-.row-article{
-    grid-row: 2;
-}
-
-:target::before {
-    content: "";
-    display: block;
-    height: 46px; 
-    margin: -46px 0 0; 
-  }*/

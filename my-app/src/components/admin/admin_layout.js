@@ -29,7 +29,7 @@ const AdminLayout = ({children}) => {  // layout statless component combining me
 }
 
 
-class AdminLayoutRoute extends React.Component { // user defined react router route component, which allows to have different layout to admin panel pages
+class AdminLayoutRoute extends React.Component { // user defined wrapper for route, which allows to have different layout to admin panel pages
     render() {
         const { component: Component, ...rest } = this.props; // get component and rest props
         if (this.props.user_id!==-1) // check if user is logged in
@@ -37,7 +37,7 @@ class AdminLayoutRoute extends React.Component { // user defined react router ro
             return (   
                 <Route {...rest} render={matchProps => (    
                 <AdminLayout>  
-                    <Component {...matchProps} />  
+                    <Component {...matchProps} />  {/* transfer props */}
                 </AdminLayout>  
             )} />)
         } else // if not logged in -> redirect to login page

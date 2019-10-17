@@ -1,8 +1,9 @@
 {
     "version": 3,
-    "mappings": "",
+    "mappings": "AAEA,8FAA8F;AAC9F,AAAA,yBAAyB,CAAA;EACrB,aAAa,ECHG,GAAG;EDInB,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,MAAM;CACzB;;AACD,AAAA,gBAAgB,CAChB;EAIG,KAAK,ECTG,IAAI;CDUd;;AAND,AAEG,gBAFa,CAEb,CAAC,CAAC;EACE,UAAU,EAAE,IAAI;CACnB",
     "sources": [
-        "article.scss"
+        "article.scss",
+        "../common/cssvars.scss"
     ],
     "names": [],
     "file": "article.css"

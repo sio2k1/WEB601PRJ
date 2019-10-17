@@ -1,26 +1,26 @@
-@import '../common/cssvars.scss';
+/* Home page styling
+Defines background styling, positioning and logo location
+*/
+@import '../common/cssvars.scss'; // import of common css variables
 .home-grid
 {
     display: grid;
-    grid-template-rows: calc(100vh - #{$header_h});
+    grid-template-rows: calc(100vh - #{$header_h}); //define one row for whole page excluding nav bar height
     grid-gap: 0px;
 }
 
-.row-logo
+.row-bg // background styling
 {
     grid-row: 1;
     display: flex;
-    //background-image: url("../../images/f3.png");
-    background: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),
-  url(../../images/f3.png);
+    background: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),  url(../../images/f3.png); //shaded background
     background-size: cover;
-    //justify-items: center;
     justify-content: center;
     align-items: center;
-    //background-color: black;
+
 }
 
-.logo-img
+.logo-img // logo styling
 {
     top: 400px;
     width: calc( 733px / 2);
@@ -29,7 +29,7 @@
     background-image: url("../../images/logo.png"); 
     filter: blur(0.5px)  brightness(1); 
 }
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 400px) { // logo resizing for smaller screens
     .logo-img
     {
         width: calc( 733px / 2.7);

@@ -1,0 +1,62 @@
+@import '../../common/cssvars.scss'; // import common css vars
+
+/*this defines syles of article elements (header, contents and footer)*/
+.page-json-parser-pic-table-centerer{ // centring an article
+    margin-top: $article_margin_top;
+    margin-bottom: $article_margin_top;
+    display: flex;
+    justify-content: center;
+}
+.page-json-parser-pic-table // tables with pictures for header\footer
+{
+    td {
+        vertical-align: top;
+    }
+    width: 70vw;
+    align-items: center;
+}
+
+.page-json-parser-td-pic { //  <td> for image in header\footer
+     display: flex;
+     flex-direction: column;
+     align-items: center;  
+ }
+
+ .page-json-parser-img-article-container // image in content container
+ {
+    display: flex;
+    justify-content: center;
+ }
+
+ .page-json-parser-img-article // image in content 
+ {
+    width: $article_w;
+    margin: 20px;
+    box-shadow: 8px 7px 8px -5px rgba(0,0,0,0.37);
+    border-radius: 7px;  
+ }
+
+
+ .page-json-parser-t-img-auto // image in td
+ {
+    width: 200px;
+    height: 200px;
+    box-shadow: 8px 7px 15px -5px rgba(0,0,0,0.37);
+    border-radius: 7px;
+ }
+
+ @media only screen and (max-width: 1024px) { //responsive design image resizer in header\footer of an article for screens with width <1024 px
+    .page-json-parser-t-img-auto 
+    {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+ @media only screen and (max-width: 768px) { //responsive design image resizer in header\footer of an article for screens with width <768px
+    .page-json-parser-t-img-auto 
+    {
+        width: 100px;
+        height: 100px;
+    }
+}

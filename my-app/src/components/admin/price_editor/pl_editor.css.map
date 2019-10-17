@@ -1,9 +1,8 @@
 {
     "version": 3,
-    "mappings": "",
+    "mappings": "AAAA,8BAA8B",
     "sources": [
-        "pl_editor.scss",
-        "../../common/cssvars.scss"
+        "pl_editor.scss"
     ],
     "names": [],
     "file": "pl_editor.css"

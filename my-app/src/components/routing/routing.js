@@ -1,6 +1,8 @@
 /*
   This is our routing container, it combines app layout and routes.
-  it also gather information about articles( dynamic pages from BD) and building routes according to them
+  it also gather information about articles( dynamic pages from BD) and building routes 
+  according to them and passing article objects to 
+  corresponding components, so they can load articles on mount
 */
 import React from 'react';
 import {connect} from 'react-redux'; 
@@ -11,7 +13,6 @@ import Home from '../home/home'
 import Article from '../article/article'
 import Price from '../price/price'
 import {a_setArticles} from '../routing/redux_routingnavi_actions'
-//import Contacts from '../contacts/contacts'
 import PlEditor from '../admin/price_editor/pl_editor'
 import UEditor from '../admin/users_editor/u_editor'
 import AdminLayoutRoute from '../admin/admin_layout' // pages with special layout for admin panel
@@ -22,16 +23,12 @@ import api from '../../api_list/api_articles_axios' //load api connector for thi
 import * as operations from '../../api_list/api_operations' // component with api calls for get\post\put\delete
 
 
-
-
-
-
 class Routing extends React.Component{
   i;
   constructor(props) { // initialization
     super(props);
-    this.state = {data:[], isFetching:false, show404:false} //set default value as abject with empty arrays
-    this.i=0; // this i we use to create keys for routes
+    this.state = {data:[], isFetching:false, show404:false} //set default value as object with empty arrays
+    this.i=0; // this "i" is used to create keys for routes
   }
   async componentDidMount() // load article data on mount
   {
@@ -63,7 +60,7 @@ class Routing extends React.Component{
 
 
   render(){
-    
+    // returning routes
     return (
       <AppLayout>
         <Switch>  
@@ -77,58 +74,17 @@ class Routing extends React.Component{
 
           <DefaultLayoutRoute key={this.i++} path='/price' component={Price} />
           {this.getArticleRouts() /* call function which builds dynamic routes */}
-          {this.state.show404 ? (<DefaultLayoutRoute key={this.i++} component={NotFound} status={404} />) : (null)}
+          {this.state.show404 ? (<DefaultLayoutRoute key={this.i++} component={NotFound} status={404} />) : (null) /* add 404 route with little delay, so we wont experience 404 page blinking at start */}
         </Switch>
       </AppLayout>
     )  
   }
 }
 
-function mapStateToProps(state) {
+function mapStateToProps(state) { // map articles from store 
   return { articles: state.routing_navi_reducer.articles }
 }
 
-export default connect(mapStateToProps)(Routing)
-
-//export default Routing;
-
-// {data.map((article)=>
-//   <DefaultLayoutRoute path={article.ArticleMatchPath} component={Contacts} article={article}/>
-// )}
-
-//<DefaultLayoutRoute path='/about' component={About} />
-          //<DefaultLayoutRoute path='/contacts' component={Contacts} />
-
-
-// class Routing extends React.Component{
-//   render(){
-//     return (
-//       <AppLayout>
-//         <Switch>  
-//           <Route exact path='/' component={Home} />
-//           <Route path='/home' component={Home} />
-//           <Route path='/login' component={Login} />
-          
-//           <AdminLayoutRoute path='/admin' component={PlEditor} />
-//           <AdminLayoutRoute path='/admin/pl-editor' component={PlEditor} />
-//           <AdminLayoutRoute path='/admin/two' component={PlEditor} />
-          
-//           <DefaultLayoutRoute path='/about' component={About} />
-//           <DefaultLayoutRoute path='/price' component={Price} />
-//           <DefaultLayoutRoute path='/contacts' component={Contacts} />
-//           <DefaultLayoutRoute component={NotFound} status={404} />
-//         </Switch>
-//       </AppLayout>
-//     );
-//   }
-// }
-
-/*
-function mapStateToProps(state) {
-  return { user_id: state.login_reducer.user_id }
-}
-
-export default connect(mapStateToProps)(Routing)
-*/
+export default connect(mapStateToProps)(Routing) // connect for redux
 
 

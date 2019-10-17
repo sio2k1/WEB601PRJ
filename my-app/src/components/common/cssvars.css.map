@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "",
+    "mappings": "AAAA,0BAA0B",
     "sources": [
         "cssvars.scss"
     ],

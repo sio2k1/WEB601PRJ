@@ -1,3 +1,5 @@
+// main app file, insert our app into index.htm dom for root element
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import AppRoot from './App';

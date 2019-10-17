@@ -1,3 +1,4 @@
+// my redux realization, is not part of project
 export function createStore(reducer, initialState){
     let state = initialState;
     let callbacks=[];

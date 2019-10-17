@@ -1,10 +1,12 @@
+/* 
+We use this component to handle routes for pages with default layout (like /price and articles).
+*/
 import React from 'react'
 import './defaultpage.css';
 import { Route } from "react-router-dom";
-//import { Link, DirectLink, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 
 
-const Defaultpage = ({ children }) => {
+const Defaultpage = ({ children }) => { // combine layout and child component (page content and footer)
     return (
       <div>
         <div className="default-page-grid">
@@ -22,7 +24,7 @@ const Defaultpage = ({ children }) => {
     }
 
 
-    const DefaultLayoutRoute = ({component: Component, article, ...rest}) => {  
+    const DefaultLayoutRoute = ({component: Component, article, ...rest}) => {  // wrapper for layout for particular route, which transfer props to target component
       return (  
           <Route {...rest} render={matchProps => (  
           <Defaultpage>  
@@ -33,4 +35,3 @@ const Defaultpage = ({ children }) => {
       };  
   
   export default DefaultLayoutRoute;
-//export default Defaultpage;

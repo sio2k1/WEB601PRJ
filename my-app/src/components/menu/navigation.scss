@@ -1,7 +1,8 @@
+/*this is pure css responsive menu
+Original styles picked from https://codepen.io/mutedblues/pen/MmPNPG
+*/
 @import '../common/cssvars.scss';
-a {
-    color: #666;
-  }
+
   
   /* header */
   
@@ -15,13 +16,6 @@ a {
     background-color: rgb(245, 245, 245);
     text-align:center;
     z-index: 1;
-
-
-   /* background-color: #fff;
-    box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
-    position: sticky;
-    width: 100%;
-    z-index: 3;*/
   }
   
   .header ul {
@@ -30,27 +24,22 @@ a {
     list-style: none;
     overflow: hidden;
     background-color: rgb(245, 245, 245);
-
-    
-    
   }
 
   .header li a:hover:not(.active) {
     background-color: #ddd;
-    }
+  }
 
-    .header .navbar-active-link {
-        //color: white;
-        background-color:  #ddd;
-    
-    }
+  .header .navbar-active-link {
+      background-color:  #ddd; 
+  }
   
   .header li a {
     display: block;
     padding: 14px 16px;
     border-right: 1px solid #f4f4f4;
     text-decoration: none;
-    //text-align: center;
+    color: #666;
   }
 
   .header .username {
@@ -177,54 +166,7 @@ a {
   
 
 
-
-/*.navbar
-{    
-    position: sticky;
-    top: 0;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: rgb(245, 245, 245);
-    text-align:center;
-    z-index: 1;
-}
-
-
- 
-.navbar li {
-    display:inline;
-}
-
-.navbar .username {
-    float: right;
-    color: #666;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-.navbar li a {
-    display: block;
-    color: #666;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    display:inline-block;
-}
-
-.navbar li a:hover:not(.active) {
-    background-color: #ddd;
-}
-
-.navbar-active-link {
-    //color: white;
-    background-color:  #ddd;
-   
-}*/
-
-//moz outline border on selection clear
+//moz outline border on selection clear to avoid dotted borders on link in moz
 .navbar-active-link:-moz-focusring { 
     outline: 0px;
 } 

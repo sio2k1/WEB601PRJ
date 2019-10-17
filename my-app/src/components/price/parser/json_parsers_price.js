@@ -4,7 +4,7 @@
 
 import React from 'react'
 
-const TableLine = (props) => //return table line prices
+const TableLine = (props) => //return table line with prices from props
 {
     return (
         <tr>
@@ -38,7 +38,7 @@ const return_price_table = json => //return table with prices
     )
 }
 
-const json_parser = (json) => { //
+const json_parser = (json) => { //parse json with prices
     return (
       <div>
         <div className="text-box">

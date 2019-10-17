@@ -1,13 +1,14 @@
-@import '../common/cssvars.scss';
-.price-table-centerer{
+/*Basic styling for pricelist page layout*/
+@import '../common/cssvars.scss'; //importing of common css vars 
+.price-table-centerer{ // placeholder for table
     margin-top: $article_margin_top;
     margin-bottom: $article_margin_top;
     display: flex;
     justify-content: center;
 }
 
-.price-table-centerer table{
-    tr:nth-child(even) {
+.price-table-centerer table{ // table with price list
+    tr:nth-child(even) { // change even rows color
         background-color: #f2f2f2;
     }
     border-collapse: collapse;
