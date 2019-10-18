@@ -1,13 +1,16 @@
-//this is config file, bud db connection moved to knexfile.js
+//This is config file, db connection located in knexfile.js
 const path = require('path');
 
 const dbPath=path.join(__dirname,'db','sdb.db'); //sqlite db path
 const APIServerPort = 3001; // port
 
-// Then we export it
 module.exports = {
     APIServerPort, dbPath
 }
+
+
+
+
 
 
 /* connection sample for mysql
