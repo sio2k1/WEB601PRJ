@@ -15,9 +15,18 @@ class Price extends React.Component {
 
   async componentDidMount() //component fully loaded
   {
+    this.mounted = true;
+    
     this.setState({...this.state, isFetching: true}); // we r fetching, handle this in render()
     const inData = await operations.FGet(api) // using axios request api root (api url set up in import api from 'FILEPATH')
-    this.setState({price_table: inData, isFetching: false});  // adding json from api to state, we r not fetching anymore
+    if(this.mounted) { // if we unmount this we do not modify any state
+      this.setState({price_table: inData, isFetching: false});  // adding json from api to state, we r not fetching anymore
+    }
+    
+  }
+
+  componentWillUnmount() {
+    this.mounted=false; //set unmounted flag
   }
 
   render() {

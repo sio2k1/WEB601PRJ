@@ -24,22 +24,17 @@ import * as operations from '../../api_list/api_operations' // component with ap
 
 
 class Routing extends React.Component{
-  i;
   constructor(props) { // initialization
     super(props);
-    this.state = {data:[], isFetching:false, show404:false} //set default value as object with empty arrays
+    this.state = {data:[], isFetching:false} //set default value as object with empty arrays
     this.i=0; // this "i" is used to create keys for routes
+
   }
   async componentDidMount() // load article data on mount
   {
     this.setState({...this.state, isFetching: true}); // start of fetching
-    const inData = await operations.FGet(api) // using axios request api root (api url set up in import api from 'FILEPATH')
+    const inData = await operations.FGet(api) // using axios request api root (api url set up in import api from 'FILEPATH')   
     this.setState({data: inData, isFetching: false}); // end of fetching after await
-
-    setTimeout(() => { // i experience 404 page blinking while app loading, so i delay its rout for 300ms
-      this.setState({show404: true});
-    }, 300);
-
   }
   
   
@@ -63,6 +58,7 @@ class Routing extends React.Component{
     // returning routes
     return (
       <AppLayout>
+        <React.Fragment>
         <Switch>  
           <Route key={this.i++} exact path='/' component={Home} />
           <Route key={this.i++} path='/home' component={Home} />
@@ -74,8 +70,9 @@ class Routing extends React.Component{
 
           <DefaultLayoutRoute key={this.i++} path='/price' component={Price} />
           {this.getArticleRouts() /* call function which builds dynamic routes */}
-          {this.state.show404 ? (<DefaultLayoutRoute key={this.i++} component={NotFound} status={404} />) : (null) /* add 404 route with little delay, so we wont experience 404 page blinking at start */}
+          {!this.state.isFetching ? (<DefaultLayoutRoute key={this.i++} component={NotFound} status={404} />) : (null) /* add 404 route after fetching, so we wont experience 404 page blinking at start */}
         </Switch>
+        </React.Fragment>
       </AppLayout>
     )  
   }

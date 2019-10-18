@@ -1,10 +1,12 @@
 //this is config file, bud db connection moved to knexfile.js
+const path = require('path');
 
+const dbPath=path.join(__dirname,'db','sdb.db'); //sqlite db path
 const APIServerPort = 3001; // port
 
 // Then we export it
 module.exports = {
-    APIServerPort
+    APIServerPort, dbPath
 }
 
 

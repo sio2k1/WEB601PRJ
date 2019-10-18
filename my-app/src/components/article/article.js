@@ -13,28 +13,29 @@ class Article extends React.Component { //init state
   constructor(props) {
     super(props);
     this.state = {data:{header_pic:[],bottom_pic:[],data_p:[]}, isFetching:false} //set default value as an object with empty arrays
+   
   }
 
   async getData() // method for get an article by article.ArticleId from props (to refresh article content on route change)
   {
+    
       const article = this.props.article; // we pass actual article object in props
       //console.log( this.props.article);
       this.setState({...this.state, isFetching: true});
       const inData = await operations.FGetById(api,article.ArticleId);
-      if(this.mounted) { // we use this to avoid errors with fetching if component is not exists anymore
+      if(this.mounted) { // we use this to avoid errors with setting state if component is not exists anymore
         this.setState({data: JSON.parse(inData.ArticleDataJson), isFetching: false});
       }
-      this.fullyMounted=true;
+      
   }
 
   componentDidMount() // call fetching on mount
   { 
     this.mounted = true;
-    this.getData();
-    
+    this.getData(); 
   }
   componentWillUnmount() {
-    this.mounted=false; //set unmounted flag
+    this.mounted = false; //set unmounted flag
   }
 
   componentDidUpdate(prevProps) {   // if some props changed

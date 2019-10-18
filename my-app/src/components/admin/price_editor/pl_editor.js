@@ -60,15 +60,25 @@ const TITLE = 'Price list editor'; //for TitleChanger(TITLE);
 class PlEditor extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {data:[], isFetching: true} //set default value as empty array
+    this.state = {data:[], isFetching: false} //set default value as empty array
+    
   }
 
   // when component fully loaded
   async componentDidMount()
   { 
+    this.mounted = true;
+
     this.setState({...this.state, isFetching: true}); // we r fetching, handle this in render()
+    //console.log(performance.now())
     const inData = await operations.FGet(api) // using axios request api root (api url set up in import api from 'FILEPATH')
-    this.setState({data: inData, isFetching: false});  // adding json from api to state  
+    if(this.mounted) { // we use this to avoid errors with setting state if component is not exists anymore
+      this.setState({data: inData, isFetching: false}) 
+    } 
+  }
+  componentWillUnmount() {
+    this.mounted = false; //set unmounted flag
+   
   }
 
    render() { 
@@ -109,7 +119,7 @@ class PlEditor extends React.Component {
                     operations.FUpdate( Object.assign(newData, {id:newData.PriceListId}) ,api); // send to api
                     
                     this.setState({ ...this.state, data }); // update state with updated row object
-                  }, 600);
+                  }, 800);
                 }),
               onRowDelete: oldData => // this happens on row delete
                 new Promise(resolve => {
@@ -120,7 +130,7 @@ class PlEditor extends React.Component {
                     operations.FDelete( Object.assign(oldData, {id:oldData.PriceListId}), api); // call delete api method
                     data.splice(data.indexOf(oldData), 1); // remove row from state
                     this.setState({ ...this.state, data });
-                  }, 600);
+                  }, 800);
                 }),
             }}
   
