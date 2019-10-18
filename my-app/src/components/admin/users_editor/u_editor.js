@@ -12,7 +12,7 @@ const UEditor = () => {
   TitleChanger(TITLE);  
 
   return (
-      <div><h1>User editor component</h1></div>
+      <div><h1>User editor placeholder</h1></div>
   )
 }
 export default UEditor;
