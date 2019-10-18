@@ -29,6 +29,14 @@ Defines background styling, positioning and logo location
     background-image: url("../../images/logo.png"); 
     filter: blur(0.5px)  brightness(1); 
 }
+
+@media only screen and (max-width: 768px) { // logo resizing for smaller screens
+    .home-grid
+    { 
+        grid-template-rows: calc(100vh - #{$header_h_small}); //define one row for whole page excluding nav bar height  
+    }
+}
+
 @media only screen and (max-width: 400px) { // logo resizing for smaller screens
     .logo-img
     {

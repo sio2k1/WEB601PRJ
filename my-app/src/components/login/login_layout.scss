@@ -3,7 +3,7 @@
  
 
 
-.grid-wrapper{ // grid for login page
+.login-layout-grid-wrapper{ // grid for login page
     display: grid;
     grid-template-rows:  20vh 10vh auto;
     height:  calc(100vh - #{$header_h});
@@ -13,18 +13,32 @@
     background: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(../../images/f3.png); //shaded background
     background-size: cover;
 }
-.top-row{
+.login-layout-top-row{
     grid-row: 1;   
 }
 
-.header-row{
+.login-layout-header-row{
     grid-row: 2;
 }
 
-.login-row{ // row with login box
+.login-layout-login-row{ // row with login box
     display: flex;
     justify-content: center;
     grid-row: 3; 
+    
 }
 
+@media only screen and (max-height: 500px) { // resizing login box for smaller screens
+    .login-layout-grid-wrapper{ // grid for login page
+        
+        grid-template-rows:  3vh 3vh auto;
+    }
+  }
 
+
+@media only screen and (max-width: 768px) { // logo resizing for smaller screens
+    .login-layout-grid-wrapper
+    { 
+        height: calc(100vh - #{$header_h_small}); //define one row for whole page excluding nav bar height  
+    }
+}

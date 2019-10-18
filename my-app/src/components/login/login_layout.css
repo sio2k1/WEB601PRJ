@@ -1,6 +1,6 @@
 /* Login page layout styling*/
 /* common css variables */
-.grid-wrapper {
+.login-layout-grid-wrapper {
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: 20vh 10vh auto;
@@ -14,17 +14,17 @@
   background-size: cover;
 }
 
-.top-row {
+.login-layout-top-row {
   -ms-grid-row: 1;
   grid-row: 1;
 }
 
-.header-row {
+.login-layout-header-row {
   -ms-grid-row: 2;
   grid-row: 2;
 }
 
-.login-row {
+.login-layout-login-row {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -33,5 +33,18 @@
           justify-content: center;
   -ms-grid-row: 3;
   grid-row: 3;
+}
+
+@media only screen and (max-height: 500px) {
+  .login-layout-grid-wrapper {
+    -ms-grid-rows: 3vh 3vh auto;
+        grid-template-rows: 3vh 3vh auto;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .login-layout-grid-wrapper {
+    height: calc(100vh - 30px);
+  }
 }
 /*# sourceMappingURL=login_layout.css.map */

@@ -37,6 +37,13 @@ Defines background styling, positioning and logo location
           filter: blur(0.5px) brightness(1);
 }
 
+@media only screen and (max-width: 768px) {
+  .home-grid {
+    -ms-grid-rows: calc(100vh - 30px);
+        grid-template-rows: calc(100vh - 30px);
+  }
+}
+
 @media only screen and (max-width: 400px) {
   .logo-img {
     width: calc( 733px / 2.7);

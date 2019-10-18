@@ -31,7 +31,7 @@ const action_logoff = (state) =>   //clear creds info and failed login attempt f
   return {...state, user_name:"", user_id:-1,  wrong_login_pwd:false} //returning new modified state (pure)
 }
 
-let initialState = {user_id:1, user_name:"", wrong_login_pwd:false}; //setting up initial state, related to login
+let initialState = {user_id:-1, user_name:"", wrong_login_pwd:false}; //setting up initial state, related to login
 
 const login_reducer = (state=initialState, action) => {
 

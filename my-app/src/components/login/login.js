@@ -9,10 +9,10 @@ const TITLE = 'Login Page'; //TitleChanger(TITLE);
 const Login = () => { // combine background and login box
     TitleChanger(TITLE);
     return (
-        <div className="grid-wrapper">
-            <div className="top-row"></div>
-            <div className="header-row"></div>
-            <div className="login-row">
+        <div className="login-layout-grid-wrapper">
+            <div className="login-layout-top-row"></div>
+            <div className="login-layout-header-row"></div>
+            <div className="login-layout-login-row">
                 <LoginBox />
             </div>
         </div>
