@@ -13,5 +13,4 @@ const route_entry ='/articles' // defines route entry point
 //creating routs:
 router.get(route_entry, handlers.getAll);
 router.get(route_entry+'/:id', commonFunc.checkID, handlers.getById);
-
 module.exports = router;
