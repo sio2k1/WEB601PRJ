@@ -1,6 +1,12 @@
 /*Basic styling for pricelist page layout*/
 /* common css variables */
 .price-table-centerer {
+  display: -ms-grid;
+  display: grid;
+  grid-auto-rows: auto auto;
+}
+
+.price-content-centrer {
   margin-top: 5vh;
   margin-bottom: 5vh;
   display: -webkit-box;
@@ -11,12 +17,38 @@
           justify-content: center;
 }
 
+.price-table-caption-holder {
+  -ms-grid-row: 1;
+  grid-row: 1;
+  margin-bottom: 10px;
+  margin-left: 8px;
+  font-size: 20pt;
+}
+
+.price-table-holder {
+  background-color: white;
+  -webkit-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12);
+          box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  padding: 10px;
+  width: 60vw;
+  -ms-grid-row: 2;
+  grid-row: 2;
+}
+
 .price-table-centerer table {
   border-collapse: collapse;
-  width: 60vw;
+  width: 100%;
 }
 
 .price-table-centerer table tr:nth-child(even) {
   background-color: #f2f2f2;
+}
+
+.price-table-centerer table th {
+  padding-bottom: 6px;
+  text-align: left;
+  background-color: white;
+  color: black;
 }
 /*# sourceMappingURL=price.css.map */

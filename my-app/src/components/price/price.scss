@@ -1,10 +1,38 @@
 /*Basic styling for pricelist page layout*/
 @import '../common/cssvars.scss'; //importing of common css vars 
-.price-table-centerer{ // placeholder for table
+.price-table-centerer { // placeholder for table
+    //margin-top: $article_margin_top;
+    //margin-bottom: $article_margin_top;
+    display: grid;
+    //justify-content: center;
+    grid-auto-rows : auto auto;
+
+}
+.price-content-centrer
+{
     margin-top: $article_margin_top;
     margin-bottom: $article_margin_top;
     display: flex;
     justify-content: center;
+   
+}
+
+.price-table-caption-holder
+{
+    grid-row: 1;
+    margin-bottom: 10px;
+    margin-left: 8px;
+    font-size: 20pt;
+}
+
+.price-table-holder
+{
+    background-color: rgb(255, 255, 255); 
+    box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 3px 1px -2px rgba(0,0,0,0.12);
+    border-radius: 4px;
+    padding: 10px;
+    width: $article_w;
+    grid-row: 2;
 }
 
 .price-table-centerer table{ // table with price list
@@ -12,5 +40,16 @@
         background-color: #f2f2f2;
     }
     border-collapse: collapse;
-    width: $article_w;
+    width: 100%;
+    //display: grid;
+    th {
+        //padding-top: 12px;
+        padding-bottom: 6px;
+        //padding: 1px;
+        text-align: left;
+        background-color: white;
+        color: rgb(0, 0, 0);
+      }
+
+
 }

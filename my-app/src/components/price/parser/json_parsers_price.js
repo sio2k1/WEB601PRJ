@@ -12,7 +12,7 @@ const TableLine = (props) => //return table line with prices from props
                 <p>{props.line.SalesItemName}</p>
             </td>
             <td>
-                <p>{props.line.Price}</p>
+                <p>{props.line.Price.toFixed(2)}$</p>
             </td>
             <td>
                 <p>{props.line.SalesItemUnits} </p>
@@ -26,16 +26,26 @@ const return_price_table = json => //return table with prices
     //let i=0;
     //console.log(json)
     return (
-        <div className="price-table-centerer">
-            <table>
-                <tbody>
-                    {
-                        json.map((line) => 
-                        <TableLine key={line.PriceListId}  line={line} />
-                        )
-                    }
-                </tbody>
-            </table>
+        <div className="price-content-centrer">
+            <div className="price-table-centerer">
+                <div className="price-table-caption-holder"><p>Prices</p></div> 
+                <div className="price-table-holder">   
+                    <table>
+                        <tbody>
+                            <tr>
+                            <th>Product</th>
+                            <th>Price</th>
+                            <th>Units</th>
+                            </tr>
+                            {
+                                json.map((line) => 
+                                    <TableLine key={line.PriceListId}  line={line} />
+                                )
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     )
 }
