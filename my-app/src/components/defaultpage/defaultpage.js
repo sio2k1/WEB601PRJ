@@ -27,9 +27,9 @@ const Defaultpage = ({ children }) => { // combine layout and child component (p
     const DefaultLayoutRoute = ({component: Component, article, ...rest}) => {  // wrapper for layout for particular route, which transfer props to target component
       return (  
           <Route {...rest} render={matchProps => (  
-          <Defaultpage>  
-              <Component article={article} {...matchProps} />  
-          </Defaultpage>  
+            <Defaultpage>  
+                <Component article={article} {...matchProps} />  
+            </Defaultpage>  
           )} />  
       )  
       };  
