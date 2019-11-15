@@ -1,5 +1,5 @@
 /*Reducers for articles in navigation bar and for getting access to articles from corresponding components*/
-import * as act from './redux_routingnavi_actions'
+import * as act from '../actions/actions'
 
 const action_set_articles = (state, action) => // set articles in store
 {

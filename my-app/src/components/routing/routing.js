@@ -12,7 +12,7 @@ import Login from '../login/login'
 import Home from '../home/home'
 import Article from '../article/article'
 import Price from '../price/price'
-import {a_setArticles} from '../routing/redux_routingnavi_actions'
+import {a_setArticles} from '../routing/actions/actions'
 import PlEditor from '../admin/price_editor/pl_editor'
 import UEditor from '../admin/users_editor/u_editor'
 import AdminLayoutRoute from '../admin/admin_layout' // pages with special layout for admin panel

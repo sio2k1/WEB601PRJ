@@ -1,6 +1,6 @@
 /*Reducers, defined for login process */
-import * as act from './redux_login_actions'
-import user_data from '../../jsondata/users.json'
+import * as act from '../actions/actions'
+import user_data from '../../../jsondata/users.json'
 
 const action_login = (state, action) => // action for login
 {
@@ -15,7 +15,7 @@ const action_login = (state, action) => // action for login
   }
   if (user_cred.user_found)  //if managed to find user - > return new state with user id and username
   {
-    return {...state, user_name:user_cred.login, user_id:user_cred.id,  wrong_login_pwd:false} // this is equals to commented code below
+    return {...state, user_name:user_cred.login, user_id:user_cred.id,  wrong_login_pwd:false} // this is equals to commented code below, returning new state with ...
     /*return Object.assign({}, state, 
       {
         user_name:user_cred.login, user_id:user_cred.id,  wrong_login_pwd:false

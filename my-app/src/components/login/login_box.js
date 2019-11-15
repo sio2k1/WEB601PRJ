@@ -4,7 +4,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux'; 
 import './login_box.css';
-import {a_login} from './redux_login_actions'
+import {a_login} from './actions/actions'
 import { Redirect } from 'react-router-dom'
 
 class LoginBox extends Component {

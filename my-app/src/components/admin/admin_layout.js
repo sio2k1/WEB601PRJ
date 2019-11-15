@@ -9,7 +9,7 @@ import {connect} from 'react-redux';
 
 const TITLE = 'Admin Page'; //TitleChanger(TITLE);
 
-const AdminLayout = ({children}) => {  // layout statless component combining menu and {children}
+const AdminLayout = ({children}) => {  // layout stateless component combining menu and {children}
   TitleChanger(TITLE);  
   return (
       <div className="admin-content-bg">

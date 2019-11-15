@@ -5,7 +5,7 @@ import React, {Component} from 'react';
 import './navigation.css';
 import { Link, NavLink } from "react-router-dom";
 import {connect} from 'react-redux'; 
-import {a_logoff} from '../login/redux_login_actions'
+import {a_logoff} from '../login/actions/actions'
 
 class Navigation extends Component
 {
