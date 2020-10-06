@@ -1,6 +1,6 @@
 # Desc
 
-Farming business website with React.js frond-end and Node.js (Express.js) back-end
+Farming business website with React.js front-end and Node.js (Express.js) back-end
 
 # Visual
 
