@@ -21,12 +21,11 @@ Data for site located in [src/jsondata/](src/jsondata/)
 * User credentials in users.json (this is for MS1 dev reasons only, users and passwords should not ever be located that way)
 
 # Login information
-By default you considered by app as visitor, to login use "Ali" as login and "321" as password, or any credentials from [src/jsondata/users.json](src/jsondata/users.json). Login field is not case sensitive.
+By default you considered by app as visitor, to login use "Ali" as login and "321" as password, or any credentials from [src/jsondata/users.json](src/jsondata/users.json). Login field is not case sensitive. Login process is faked, currently login data is located in JSON file.
 
 # Extra information
-This is copy pasted from my journal post about how its all working.
 
-For project I used an application template, generated with create-react-app, it actually did a lot of work for me. For creating this project I used several node.js modules, including react, react-router and redux.
+For the project I used an application template, generated with create-react-app. For creating this project I used several node.js modules, including react, react-router and redux.
 
 ### Component structure
 
@@ -39,7 +38,7 @@ On top of all routing there is an ```App_layout``` class which simply defines, t
 
 ### SCSS
 
-Project is based on SCSS as main CSS preprocessor syntax, at this point I don’t use webpack. I’m using an extension for VSCODE to compile my SCSS files, called “Live Sass Compiler”
+Project is based on SCSS as main CSS preprocessor syntax, at this point I don’t use webpack. I’m using an extension for VSCODE to compile my SCSS files, called “Live Sass Compiler” All styling made without css frameworks.
 
 ### Json data
 
