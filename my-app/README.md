@@ -7,12 +7,15 @@
 # Visual
 
 Homepage:
+
 ![Homepage](/img/home.png 'home page')
 
 Sample page:
+
 ![Samplepage](/img/page.png 'home page')
 
 Prices editor:
+
 ![Priceseditor](/img/pleditor.png 'home page')
 
 # Routes
