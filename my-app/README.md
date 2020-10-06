@@ -4,20 +4,6 @@
 2. Run `npm i` to load missing modules
 3. Run `npm start` to start application
 
-# Visual
-
-Homepage:
-
-![Homepage](/img/home.png 'home page')
-
-Sample page:
-
-![Samplepage](/img/page.png 'home page')
-
-Prices editor:
-
-![Priceseditor](/img/pleditor.png 'home page')
-
 # Routes
 
 Available routes:
